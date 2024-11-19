@@ -1,0 +1,36 @@
+/* Follow Button Styles */
+.btn-primary {
+    background-color: #0059ff; /* Blue background */
+    color: #fff; /* White text */
+    border: 1px solid #0059ff; /* Blue border */
+    padding: 8px 16px; /* Padding */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 14px; /* Font size */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+    margin-left: 100px;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    border-color: #0056b3; /* Darker blue border on hover */
+  }
+  
+  /* Unfollow Button Styles */
+  .btn-danger {
+    background-color: #dc3545; /* Red background */
+    color: #fff; /* White text */
+    border: 1px solid #dc3545; /* Red border */
+    padding: 8px 16px; /* Padding */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 14px; /* Font size */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+    margin-left: 100px;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333; /* Darker red on hover */
+    border-color: #c82333; /* Darker red border on hover */
+  }
+  

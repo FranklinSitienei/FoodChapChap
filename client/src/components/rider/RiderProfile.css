@@ -1,0 +1,67 @@
+
+.rider-background {
+  background-image: url('./bike.jpg'); /* Set background image */
+  background-size: cover; /* Cover the entire background */
+  background-position: center top; /* Position the background image */
+  height: 100vh; /* Set full height of viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: margin-left 0.3s ease;
+}
+
+.rider-container {
+  background-color: rgba(255, 255, 255, 0.9); /* Add a semi-transparent white background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+  /* max-width: 400px; */
+}
+
+.rider-content {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.rider-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.rider-form {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form-check-input {
+  margin-right: 5px;
+}
+
+.show-password-icon {
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #000000;
+  color: white;
+}

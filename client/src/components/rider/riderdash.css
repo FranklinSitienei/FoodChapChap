@@ -1,0 +1,38 @@
+/* Rider Dashboard Container */
+
+
+/* Content styles */
+.rider-dashboard-container {
+  display: flex;
+  transition: margin-left 0.3s ease;
+}
+
+.rider-dashboard-container.collapsed .rider-dashboard-content {
+  margin-left: 80px;
+}
+
+.rider-dashboard-content {
+  flex: 1;
+  padding: 20px;
+  margin-left: 250px; /* Adjusted margin to account for expanded sidebar */
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}

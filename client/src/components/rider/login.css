@@ -1,0 +1,100 @@
+.rider-container {
+    width: 70%;
+    min-height: calc(100vh - 300px); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 200px;
+    margin-right: 100px;
+    margin-bottom: 100px; 
+}
+
+.rider-wrapper {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.rider-content {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+.rider-title {
+    font-size: 1.75rem;
+    /* Equivalent to text-2xl in Tailwind */
+    color: red;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.rider-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.body {
+    color: white;
+    font-size: medium;
+}
+
+.reg-container {
+    width: 50%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 3.5rem;
+    justify-content: space-between;
+}
+
+.br {
+    color: black;
+    font-weight: bold;
+
+}
+
+.reg-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 23px;
+    padding-bottom: 23px;
+}
+
+.remember-me{
+    display: flex;
+    gap: 5px;
+}
+
+.check{
+    font-size: 10px;
+}
+
+/* Add this to your existing CSS file or style tag */
+.show-password-icon {
+    cursor: pointer;
+}
+
+.password-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.password-container input {
+    flex: 1;
+    padding-right: 30px; /* Adjust as needed */
+}
+
+.show-password-icon {
+    position: absolute;
+    right: 10px; /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-50%);
+}

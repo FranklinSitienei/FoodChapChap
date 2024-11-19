@@ -1,0 +1,102 @@
+.main-section {
+    width: 100%;
+  }
+  
+  .page-section {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container-content {
+    display: flex;
+    width: 50%;
+    margin: 0 auto;
+  }
+  
+  .sidebar {
+    width: 25%;
+    position: fixed;
+    top: 10px;
+    left: 0;
+    height: 100%;
+  }
+  
+  .blog-masonry .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .grid-item {
+    flex: 1 0 30%; /* Adjust the percentage to control the width of the blog cards */
+    margin: 10px;
+  }
+  
+  .blog-post {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .blog-post .img-holder {
+    margin-bottom: 15px;
+  }
+  
+  .blog-post .text-holder {
+    padding: 10px;
+  }
+  
+  .blog-post .text-holder .author-info {
+    margin-bottom: 10px;
+  }
+  
+  .blog-post .text-holder .post-title {
+    margin-bottom: 10px;
+  }
+  
+  .blog-post:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .pagination li {
+    margin: 0 5px;
+  }
+  
+  .pagination li a {
+    display: block;
+    padding: 8px 12px;
+    background: #1e73be;
+    color: #fff;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+  }
+  
+  .pagination li a:hover {
+    background: #135a96;
+  }
+  
+  @media (max-width: 991px) {
+    .blog-sidebar {
+      position: static;
+      width: 100%;
+    }
+  
+    .grid-item {
+      flex: 1 0 45%;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .grid-item {
+      flex: 1 0 100%;
+    }
+  }
+  

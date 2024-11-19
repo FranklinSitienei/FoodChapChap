@@ -1,0 +1,14 @@
+/* Responsive CSS */
+
+/* Adjust styles for screens up to 768px wide */
+@media screen and (max-width: 768px) and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 1) {
+
+  
+    /* Add your responsive styles here */
+  }
+  
+  /* Adjust styles for screens up to 576px wide */
+  @media screen and (max-width: 576px) and (device-width: 576px) and (device-height: 768px) and (-webkit-device-pixel-ratio: 1) {
+    /* Add your responsive styles here */
+  }
+  

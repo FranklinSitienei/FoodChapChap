@@ -1,0 +1,23 @@
+.order-actions{
+    width: 100px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.confirm{
+    background-color: green;
+}
+
+.confirm:hover{
+    background-color: rgb(5, 180, 5);
+}
+
+.cancel{
+    background-color: red;
+}
+
+.cancel:hover{
+    background-color: rgb(168, 5, 5);
+}

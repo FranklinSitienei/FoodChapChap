@@ -1,0 +1,207 @@
+{
+  "restaurants": [
+    {
+      "name": "Bella Italia",
+      "ratings": 4.3,
+      "minimum_order_value": 20.0,
+      "delivery_fee": 3.0,
+      "delivery_time": 30,
+      "menu_items": [
+        "Apple Juice",
+        "Beef Roast",
+        "Cheese Burger",
+        "Chicken Roast"
+      ]
+    },
+    {
+      "name": "Sushi Palace",
+      "ratings": 4.7,
+      "minimum_order_value": 25.0,
+      "delivery_fee": 2.5,
+      "delivery_time": 45,
+      "menu_items": ["BB.Q", "Carrot Juice", "Cheese Burger", "Chicken Roast"]
+    },
+    {
+      "name": "Pizza Heaven",
+      "ratings": 3.8,
+      "minimum_order_value": 15.0,
+      "delivery_fee": 2.0,
+      "delivery_time": 25,
+      "menu_items": [
+        "Apple Juice",
+        "Beef Roast",
+        "Carrot Juice",
+        "Cheese Burger"
+      ]
+    },
+    {
+      "name": "Mexican Grill",
+      "ratings": 4.5,
+      "minimum_order_value": 18.0,
+      "delivery_fee": 3.5,
+      "delivery_time": 40,
+      "menu_items": ["BB.Q", "Carrot Juice", "Cheese Burger", "Chicken Roast"]
+    },
+    {
+      "name": "Thai Delight",
+      "ratings": 3.9,
+      "minimum_order_value": 22.0,
+      "delivery_fee": 3.2,
+      "delivery_time": 35,
+      "menu_items": ["Apple Juice", "Beef Roast", "Chicken Roast"]
+    },
+    {
+      "name": "Mediterranean Flavors",
+      "ratings": 4.8,
+      "minimum_order_value": 23.0,
+      "delivery_fee": 3.0,
+      "delivery_time": 40,
+      "menu_items": ["BB.Q", "Carrot Juice", "Cheese Burger", "Chicken Roast"]
+    },
+    {
+      "name": "Burger Joint",
+      "ratings": 3.6,
+      "minimum_order_value": 17.0,
+      "delivery_fee": 2.5,
+      "delivery_time": 30,
+      "menu_items": [
+        "Apple Juice",
+        "Beef Roast",
+        "Carrot Juice",
+        "Cheese Burger"
+      ]
+    },
+    {
+      "name": "Indian Spice",
+      "ratings": 4.1,
+      "minimum_order_value": 18.0,
+      "delivery_fee": 3.0,
+      "delivery_time": 35,
+      "menu_items": ["BB.Q", "Cheese Burger", "Chicken Roast"]
+    },
+    {
+      "name": "Pasta House",
+      "ratings": 4.4,
+      "minimum_order_value": 21.0,
+      "delivery_fee": 2.8,
+      "delivery_time": 40,
+      "menu_items": [
+        "Apple Juice",
+        "Carrot Juice",
+        "Cheese Burger",
+        "Chicken Roast"
+      ]
+    },
+    {
+      "name": "Chinese Garden",
+      "ratings": 3.7,
+      "minimum_order_value": 20.0,
+      "delivery_fee": 3.0,
+      "delivery_time": 45,
+      "menu_items": [
+        "Apple Juice",
+        "Beef Roast",
+        "Cheese Burger",
+        "Chicken Roast"
+      ]
+    },
+    {
+      "name": "Steakhouse Supreme",
+      "ratings": 4.9,
+      "minimum_order_value": 30.0,
+      "delivery_fee": 4.0,
+      "delivery_time": 50,
+      "menu_items": ["BB.Q", "Beef Roast", "Carrot Juice", "Chicken Roast"]
+    },
+    {
+      "name": "Vegetarian Bliss",
+      "ratings": 4.2,
+      "minimum_order_value": 19.0,
+      "delivery_fee": 2.5,
+      "delivery_time": 30,
+      "menu_items": ["Apple Juice", "BB.Q", "Beef Roast", "Carrot Juice"]
+    },
+    {
+      "name": "Seafood Cove",
+      "ratings": 3.8,
+      "minimum_order_value": 28.0,
+      "delivery_fee": 3.5,
+      "delivery_time": 45,
+      "menu_items": ["Apple Juice", "BB.Q", "Beef Roast", "Chicken Roast"]
+    },
+    {
+      "name": "BBQ Barn",
+      "ratings": 4.6,
+      "minimum_order_value": 25.0,
+      "delivery_fee": 3.0,
+      "delivery_time": 40,
+      "menu_items": ["BB.Q", "Beef Roast", "Carrot Juice", "Cheese Burger"]
+    },
+    {
+      "name": "Greek Taverna",
+      "ratings": 3.9,
+      "minimum_order_value": 22.0,
+      "delivery_fee": 2.8,
+      "delivery_time": 35,
+      "menu_items": ["Apple Juice", "BB.Q", "Beef Roast", "Chicken Roast"]
+    },
+    {
+      "name": "Pizzeria Uno",
+      "ratings": 4.4,
+      "minimum_order_value": 16.0,
+      "delivery_fee": 2.5,
+      "delivery_time": 30,
+      "menu_items": [
+        "Apple Juice",
+        "Carrot Juice",
+        "Cheese Burger",
+        "Chicken Roast"
+      ]
+    },
+    {
+      "name": "Japanese Fusion",
+      "ratings": 3.7,
+      "minimum_order_value": 24.0,
+      "delivery_fee": 3.2,
+      "delivery_time": 45,
+      "menu_items": ["BB.Q", "Beef Roast", "Carrot Juice", "Chicken Roast"]
+    },
+    {
+      "name": "Cajun Kitchen",
+      "ratings": 4.0,
+      "minimum_order_value": 18.0,
+      "delivery_fee": 2.8,
+      "delivery_time": 35,
+      "menu_items": ["Apple Juice", "BB.Q", "Beef Roast", "Carrot Juice"]
+    },
+    {
+      "name": "Italian Trattoria",
+      "ratings": 4.3,
+      "minimum_order_value": 23.0,
+      "delivery_fee": 3.0,
+      "delivery_time": 40,
+      "menu_items": [
+        "Apple Juice",
+        "Beef Roast",
+        "Carrot Juice",
+        "Cheese Burger"
+      ]
+    },
+    {
+      "name": "Mexican Cantina",
+      "ratings": 3.9,
+      "minimum_order_value": 21.0,
+      "delivery_fee": 2.5,
+      "delivery_time": 35,
+      "menu_items": ["Apple Juice", "BB.Q", "Beef Roast", "Chicken Roast"]
+    },
+    {
+      "name": "Thai Spice House",
+      "ratings": 4.2,
+      "minimum_order_value": 22.0,
+      "delivery_fee": 3.2,
+      "delivery_time": 40,
+      "menu_items": ["BB.Q", "Beef Roast", "Carrot Juice", "Cheese Burger"]
+    }
+  ]
+}

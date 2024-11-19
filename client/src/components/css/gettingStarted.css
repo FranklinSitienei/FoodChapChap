@@ -1,0 +1,38 @@
+/* gettingStarted.css */
+
+.getting-started {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  height: 100vh;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 800px; /* Adjust this value as needed */
+}
+
+.card {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  /* margin: 10px; */
+  padding: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  background-color: #fff;
+}
+
+h2 {
+  font-size: 24px;
+  color: #333;
+  margin-top: 10px;
+}
+
+p {
+  font-size: 16px;
+  color: #666;
+  margin-top: 10px;
+}

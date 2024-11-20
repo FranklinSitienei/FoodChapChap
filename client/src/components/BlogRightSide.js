@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './BlogRightSide.css';
 
 const BlogRightSide = () => {
     const [popularBlogs, setPopularBlogs] = useState([]);

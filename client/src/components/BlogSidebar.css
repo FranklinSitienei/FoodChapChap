@@ -1,0 +1,67 @@
+/* Blog Sidebar Styles */
+.blog-sidebar {
+    width: 60px; /* Initial width for collapsed state */
+    height: 50%;
+    transition: width 0.3s ease;
+    background-color: #f4f4f4;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  .blog-sidebar.expanded {
+    width: 130px; /* Width when expanded */
+  }
+  
+  .blog-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .blog-sidebar ul li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    transition: background 0.3s ease;
+  }
+  
+  .blog-sidebar ul li:hover {
+    background-color: #ddd;
+  }
+  
+  .blog-sidebar ul li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  .blog-sidebar ul li a i {
+    font-size: 18px; /* Icon size */
+    margin-right: 10px; /* Space between icon and text */
+  }
+  
+  .blog-sidebar.collapsed ul li a i {
+    margin-right: 0; /* Remove space in collapsed state */
+  }
+  
+  .blog-sidebar.collapsed ul li a span {
+    display: none; /* Hide text in collapsed state */
+  }
+  
+  .blog-sidebar ul li a span {
+    font-size: 12px; /* Smaller text in expanded state */
+  }
+  
+  .toggle-icon {
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    color: #333;
+    align-items: center;
+  }
+  
+  .toggle-icon:hover {
+    color: #000;
+  }

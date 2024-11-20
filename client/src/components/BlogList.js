@@ -46,7 +46,7 @@ function BlogList() {
           
             <BlogSidebar className='sidebar'/>
           
-          <div className="col-lg-9 col-md-8 col-sm-12 col-xs-12">
+          <div className="col-lg-10 col-md-10 col-sm-12 col-xs-12">
             <div className="page-section">
               <div className="row">
                 <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">

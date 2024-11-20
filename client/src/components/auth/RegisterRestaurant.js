@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import { FaImage, FaFilePdf } from "react-icons/fa";
 import "react-phone-input-2/lib/style.css";
 import PhoneInput from "react-phone-input-2";
 import CheffImage from "./cheff.jpeg";
@@ -129,19 +130,29 @@ function RegisterRestaurant() {
         <div className="modal-body">
           {errorMessage && <p className="error-message">{errorMessage}</p>}
           <form onSubmit={handleSubmit}>
-            <div className="image-uploader">
-              {imagePreview && (
+          <div className="image-uploader">
+              {imagePreview ? (
                 <div className="image-preview">
                   <img
                     src={imagePreview}
                     alt="Restaurant"
                     className="preview-image"
                     onClick={handleImageDelete}
-                  />             
+                  />
+                </div>
+              ) : (
+                <div className="image-placeholder" onClick={() => document.getElementById('image-upload').click()}>
+                  <FaImage size={30} />
+                  <p>Click to add image</p>
                 </div>
               )}
               <label className="image-upload">
-                <input type="file" onChange={handleImageChange} />
+                <input
+                  type="file"
+                  id="image-upload"
+                  style={{ display: 'none' }}
+                  onChange={handleImageChange}
+                />
               </label>
             </div>
             <div className="name-inputs">
@@ -189,7 +200,7 @@ function RegisterRestaurant() {
               <input
                 type="text"
                 className="form-control"
-                placeholder="Brand"
+                placeholder="Brand Name/Company Name"
                 value={brand}
                 onChange={(e) => setBrand(e.target.value)}
                 required
@@ -199,7 +210,7 @@ function RegisterRestaurant() {
               <input
                 type="text"
                 className="form-control"
-                placeholder="Location"
+                placeholder="Location/Address"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
                 required
@@ -226,23 +237,30 @@ function RegisterRestaurant() {
               />
             </div>
             <div className="permit-uploader">
-              {permitPreview && (
+              {permitPreview ? (
                 <div className="permit-preview">
                   <embed
                     src={permitPreview}
                     type="application/pdf"
                     className="preview-pdf"
                   />
-                  <button
-                    className="delete-button"
-                    onClick={handlePermitDelete}
-                  >
+                  <button className="delete-button" onClick={handlePermitDelete}>
                     X
                   </button>
                 </div>
+              ) : (
+                <div className="permit-placeholder" onClick={() => document.getElementById('permit-upload').click()}>
+                  <FaFilePdf size={30} />
+                  <p>Click to add permit</p>
+                </div>
               )}
               <label className="permit-upload">
-                <input type="file" onChange={handlePermitChange} />
+                <input
+                  type="file"
+                  id="permit-upload"
+                  style={{ display: 'none' }}
+                  onChange={handlePermitChange}
+                />
               </label>
             </div>
             <div className="terms-and-conditions">

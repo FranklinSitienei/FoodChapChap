@@ -58,7 +58,7 @@ function BlogList() {
                             <NavLink className="trans" to={`/blogs/${blog.id}`}>
                               <div className="img-holder">
                                 <figure>
-                                  <a href="#"><img src={blog.image_url} alt="#" /></a>
+                                  <a href="#"><img src={blog.image_url} alt="" /></a>
                                 </figure>
                               </div>
                             </NavLink>

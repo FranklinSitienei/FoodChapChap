@@ -4,31 +4,33 @@
   padding: 20px;
   background-color: #f9f9f9;
   overflow: hidden;
+  flex-wrap: wrap;
 }
 
 .sidebar {
   flex: 1;
-  max-width: 250px;
+  max-width: 150px;
 }
 
 .col-lg-10 {
   flex: 2;
-  max-width: calc(100% - 200px);
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 160px); /* Adjust for header and footer */
-  overflow-y: hidden;
-} 
+  gap: 20px;
+  padding: 20px;
+  max-width: calc(50% - 150px); /* Adjust according to sidebar width */
+  overflow-y: auto;
+}
 
 .blog-masonry {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 20px;
   padding: 10px;
 }
 
 .grid-item {
-  width: 100%;
+  flex: 1 1 calc(33.33% - 20px);
   display: flex;
   flex-direction: column;
   border: 1px solid #ddd;

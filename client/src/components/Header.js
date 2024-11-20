@@ -81,17 +81,19 @@ function Header({ onLogout }) {
                 </a>
               </figure>
             </div>
-            <div className="nav-right wow fadeOutRight" data-wow-duration="2s" style={{ marginTop: '3px' }}>
-              <div className="main-nav">
-                <div id="only-phone" style={{ display: 'flex' }}>
-                  <p style={{ marginRight: '20px' }}>
+
+            {/* <div id="only-phone" style={{ display: 'flex', marginTop: '3px', marginRight: '10px' }}>
+                  <p style={{ marginLeft: '50px' }}>
                     <NavLink className="trans" to={`${process.env.PUBLIC_URL}`}>Home</NavLink>
                   </p>
-                  <p style={{ marginRight: '20px' }}>
+                  <p style={{ marginLeft: '20px' }}>
                     <NavLink className="trans" to={`${process.env.PUBLIC_URL}/restaurants`}>Restaurants</NavLink>
                   </p>
-                  <p><a href="/blogs">Blogs</a></p>
-                </div>
+                  <p style={{ marginLeft: '20px' }}><a href="/blogs">Blogs</a></p>
+                </div> */}
+
+            <div className="nav-right wow fadeOutRight" data-wow-duration="2s" style={{ marginTop: '3px', marginLeft: '20px'}}>
+              <div className="main-nav">
 
                 <nav className="main-navigation">
                   <ul className="fancy-right-menu">

@@ -15,9 +15,9 @@ Followed.all
 puts 'started ##########'
 
 
-rider1 = Rider.create(first_name: "rider1", last_name: "Meshack",email: "rider1@gmail.com",phone_number: "0783565522",password: "rider1", location: "Nakuru", bike_type: "motorcycle", profile_pic: File.open(Rails.root.join("public/assets/rider1.jpeg"))) 
-rider2 = Rider.create(first_name: "rider2", last_name: "James",email: "rider2@gmail.com",phone_number: "0745678345",password: "rider2", location: "Nyeri", bike_type: "motorcycle", profile_pic: File.open(Rails.root.join("public/assets/rider1.jpeg"))) 
-rider3 = Rider.create(first_name: "rider3", last_name: "Denis",email: "rider3@gmail.com",phone_number: "0783565785",password: "rider3", location: "Nairobi", bike_type: "bicycle", profile_pic: File.open(Rails.root.join("public/assets/rider1.jpeg"))) 
+rider1 = Rider.create!(first_name: "rider1", last_name: "Meshack", email: "rider1@gmail.com", phone_number: "0783565522", password: "rider1", location: "Nakuru", bike_type: "motorcycle", profile_pic: File.open(Rails.root.join("public/assets/rider1.jpeg"))) 
+rider2 = Rider.create!(first_name: "rider2", last_name: "James", email: "rider2@gmail.com", phone_number: "0745678345", password: "rider2", location: "Nyeri", bike_type: "motorcycle", profile_pic: File.open(Rails.root.join("public/assets/rider1.jpeg"))) 
+rider3 = Rider.create!(first_name: "rider3", last_name: "Denis", email: "rider3@gmail.com", phone_number: "0783565785", password: "rider3", location: "Nairobi", bike_type: "bicycle", profile_pic: File.open(Rails.root.join("public/assets/rider1.jpeg"))) 
 
 
 user1 = User.create( username: "customer1", email: "Meshack@gmail.com",address: "Nairobi",password: "customer1",phone: "0722123223",yummypoints:0, location: "kinoo", profile_pic: File.open(Rails.root.join("public/assets/user1.jpeg"))) 

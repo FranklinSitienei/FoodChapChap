@@ -106,7 +106,7 @@ function Header({ onLogout }) {
                             color: '#fff',
                             fontFamily: 'Montserrat, sans-serif',
                             fontSize: '12px',
-                            fontWeight: '700',
+                            fontWeight: '500',
                             letterSpacing: '0',
                             lineHeight: 'normal',
                             padding: '10px 15px',

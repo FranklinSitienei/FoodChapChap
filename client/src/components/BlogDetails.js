@@ -36,7 +36,7 @@ function BlogDetails({ blogs }) {
           console.error("Error fetching comments:", error);
           setComments([]);
         });
-      
+
       fetch(`/users/${blog.user_id}/is_following`, {
         headers: {
           "Authorization": `Bearer ${localStorage.getItem("user")}`
@@ -57,22 +57,22 @@ function BlogDetails({ blogs }) {
       user_id: user.id,
       blog_id: id,
     };
-    fetch(`/comments`, {
-      method: "POST",
+    fetch(`/blogs/${id}/comments`, {
       headers: {
-        "Content-Type": "application/json",
         "Authorization": `Bearer ${localStorage.getItem("user")}`
       },
       body: JSON.stringify(newCommentObj),
     })
       .then((response) => response.json())
-      .then((comment) => {
-        setComments([...comments, comment]);
-        setNewComment("");
+      .then((commentsData) => {
+        console.log("Comments data:", commentsData);
+        setComments(commentsData);
       })
       .catch((error) => {
-        console.error("Error adding comment:", error);
+        console.error("Error fetching comments:", error);
+        setComments([]);
       });
+
   };
 
   const handleLikeComment = (commentId) => {
@@ -290,208 +290,111 @@ function BlogDetails({ blogs }) {
         </div>
         {/* Blog content */}
         <div className="container">
-          <div className="row">
-            <div className="page-content col-lg-8 col-md-8 col-sm-12 col-xs-12">
-              <div className="page-section">
-                <div className="blog-detail">
-                  <div className="row">
-                    {/* Blog details */}
-                    <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <div className="author-info">
-                        <figure>
-                          <img
-                            alt="#"
-                            src={`${process.env.PUBLIC_URL}/assets/extra-images/avatar-01.jpeg`}
-                          />
-                        </figure>
-                        <div className="text-holder">
-                          <p>
-                            Posted by{" "}
-                            <span className="name">
-                              <a href="#">{user.username}</a>
-                            </span>
-                          </p>
-                          <ul className="post-options">
-                            <li>
-                              <i className="icon-clock"></i>
-                              <span className="date">Oct 28, 2016</span>
-                            </li>
-                            <li>
-                              <i className="icon-eye4"></i>
-                              <span>494</span>
-                            </li>
-                            <li>
-                              <span>
-                                <a href="#">
-                                  <i className="icon-heart-outlined"></i>1
-                                </a>
-                              </span>
-                            </li>
-                          </ul>
-                          {/* Follow/Unfollow Button */}
-                          {isFollowing ? (
-                            <button onClick={handleUnfollow} className="btn-danger" >
-                              Unfollow
-                            </button>
-                          ) : (
-                            <button onClick={handleFollow} className="btn-primary">
-                              Follow
-                            </button>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <div className="title-area">
-                        <h2>{title}</h2>
-                        <p>{content}</p>
-                        <img
-                          src={image_url}
-                          alt="Blog Image"
-                          className="blog-image"
-                          style={{
-                            width: "100%",
-                            height: "auto",
-                            
-                          }}
-                        />
-                      </div>
-                    </div>
-                    <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <div className="tags-list mt-4">
-                        <h6>Tags:</h6>
-                        <ul>
-                          <li><a href="#">Roll</a></li>
-                          <li><a href="#">Home</a></li>
-                          <li><a href="#">Blog</a></li>
-                          <li><a href="#">Lists</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <div className="comment-form mt-4">
-                        <h4 className="text-2xl font-semibold">Post your Comment</h4>
-                        <form onSubmit={handleAddComment} className="flex flex-col">
-                          <textarea
-                            id="comment_mes"
-                            name="comment"
-                            placeholder="Text here.."
-                            value={newComment}
-                            onChange={(e) => setNewComment(e.target.value)}
-                            className="w-full p-2 border border-gray-300 rounded mb-2"
-                          ></textarea>
-                          <button
-                            type="submit"
-                            className="bg-blue-500 text-white px-4 py-2 rounded"
-                          >
-                            Post Comment
-                          </button>
-                        </form>
-                      </div>
-                    </div>
-                    <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <div className="comments-list mt-4">
-                        {Array.isArray(comments) &&
-                          comments.map((comment) => (
-                            <div
-                              key={comment.id}
-                              className="comment border-b-2 border-gray-300 pb-4 mb-4 relative"
-                            >
-                              <div className="flex items-start mb-2">
-                                <img
-                                  src={comment.user.profile_picture || `${process.env.PUBLIC_URL}/assets/extra-images/avatar-01.jpeg`}
-                                  alt="Profile"
-                                  className="w-10 h-10 rounded-full mr-4"
-                                />
-                                <div>
-                                  <p className="font-semibold">{comment.user.username}</p>
-                                  <p>{comment.content}</p>
-                                  <button
-                                    onClick={() => handleLikeComment(comment.id)}
-                                    className="text-blue-500 mt-2 inline-flex items-center"
-                                  >
-                                    <i className={`icon-heart ${comment.likedByUser ? "text-red-500" : "text-gray-400"}`}></i>
-                                    <span className="ml-1">{comment.likes}</span>
-                                  </button>
-                                  <button
-                                    onClick={() => setCommentIdForReply(comment.id)}
-                                    className="ml-4 text-blue-500"
-                                  >
-                                    Reply
-                                  </button>
-                                  {/* Pin Comment Button */}
-                                  <button
-                                    className="ml-4 text-blue-500"
-                                    // Add functionality for pinning if needed
-                                  >
-                                    Pin
-                                  </button>
-                                </div>
-                              </div>
-                              {commentIdForReply === comment.id && (
-                                <form onSubmit={handleAddReply} className="reply-form mt-4">
-                                  <textarea
-                                    placeholder="Reply here.."
-                                    value={newReply}
-                                    onChange={(e) => setNewReply(e.target.value)}
-                                    className="w-full p-2 border border-gray-300 rounded mb-2"
-                                  ></textarea>
-                                  <button
-                                    type="submit"
-                                    className="bg-blue-500 text-white px-4 py-2 rounded"
-                                  >
-                                    Post Reply
-                                  </button>
-                                </form>
-                              )}
-
-                              {comment.replies && (
-                                <>
-                                  <button
-                                    onClick={() => toggleReplies(comment.id)}
-                                    className="mt-2 text-blue-500"
-                                  >
-                                    {showAllReplies[comment.id] ? "Show Less Replies" : "Show All Replies"}
-                                  </button>
-                                  {showAllReplies[comment.id] && (
-                                    <div className="replies mt-4 pl-4 border-l-2 border-gray-300">
-                                      {comment.replies.map((reply) => (
-                                        <div
-                                          key={reply.id}
-                                          className="reply flex items-start mb-2"
-                                        >
-                                          <img
-                                            src={reply.user.profile_picture || `${process.env.PUBLIC_URL}/assets/extra-images/avatar-01.jpeg`}
-                                            alt="Profile"
-                                            className="w-8 h-8 rounded-full mr-2"
-                                          />
-                                          <div>
-                                            <p className="font-semibold">{reply.user.username}</p>
-                                            <p>{reply.content}</p>
-                                            <button
-                                              onClick={() => handleLikeComment(reply.id)}
-                                              className="text-blue-500 mt-2 inline-flex items-center"
-                                            >
-                                              <i className={`icon-heart ${reply.likedByUser ? "text-red-500" : "text-gray-400"}`}></i>
-                                              <span className="ml-1">{reply.likes}</span>
-                                            </button>
-                                          </div>
-                                        </div>
-                                      ))}
-                                    </div>
-                                  )}
-                                </>
-                              )}
-                            </div>
-                          ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <div className="author-info">
+            <figure>
+              <img
+                src={`${process.env.PUBLIC_URL}/assets/extra-images/avatar-01.jpeg`}
+                alt="Author"
+              />
+            </figure>
+            <div className="text-holder">
+              <span className="name">{user.username}</span>
+              <span className="date">Oct 28, 2016</span>
             </div>
-            <BlogRightSide />
+            <button
+              onClick={isFollowing ? handleUnfollow : handleFollow}
+              className={isFollowing ? "btn-danger" : "btn-primary"}
+            >
+              {isFollowing ? "Unfollow" : "Follow"}
+            </button>
           </div>
+
+          <div className="title-area">
+            <h2>{title}</h2>
+            <p>{content}</p>
+            <img src={image_url} alt="Blog" className="blog-image" />
+          </div>
+
+          <div className="tags-list">
+            <h6>Tags:</h6>
+            <ul>
+              {["Roll", "Home", "Blog", "Lists"].map((tag) => (
+                <li key={tag}>
+                  <a href="#">{tag}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="views-likes">
+            <div>Views: 494 Likes: 1</div>
+            <div>Comments</div>
+          </div>
+
+          <div className="comments-section">
+            <h3>Comments</h3>
+            {Array.isArray(comments) && comments.map((comment) => (
+              <div className="comment" key={comment.id}>
+                <div className="user-info">
+                  <span className="name">{comment.user.username}</span>
+                  <span className="date">
+                    {new Date(comment.created_at).toLocaleDateString()}
+                  </span>
+                </div>
+                <p className="content">{comment.content}</p>
+                <div className="comment-actions">
+                  <button onClick={() => handleLikeComment(comment.id)}>Like</button>
+                  <button onClick={() => setCommentIdForReply(comment.id)}>
+                    Reply
+                  </button>
+                </div>
+
+                {showAllReplies[comment.id] &&
+                  comment.replies.map((reply) => (
+                    <div className="reply-section" key={reply.id}>
+                      <div className="user-info">
+                        <span className="name">{reply.user.username}</span>
+                        <span className="date">
+                          {new Date(reply.created_at).toLocaleDateString()}
+                        </span>
+                      </div>
+                      <p className="content">{reply.content}</p>
+                      <div className="comment-actions">
+                        <button>Like</button>
+                      </div>
+                    </div>
+                  ))}
+
+                {commentIdForReply === comment.id && (
+                  <div className="comment-input reply-section">
+                    <textarea
+                      value={newReply}
+                      onChange={(e) => setNewReply(e.target.value)}
+                      placeholder="Write a reply..."
+                    />
+                    <button onClick={handleAddReply}>Reply</button>
+                  </div>
+                )}
+
+                <button
+                  onClick={() => toggleReplies(comment.id)}
+                  className="toggle-replies"
+                >
+                  {showAllReplies[comment.id] ? "Hide Replies" : "Show Replies"}
+                </button>
+              </div>
+            ))}
+            <div className="comment-input">
+              <textarea
+                value={newComment}
+                onChange={(e) => setNewComment(e.target.value)}
+                placeholder="Write a comment..."
+              />
+              <button onClick={handleAddComment}>Comment</button>
+            </div>
+
+          </div>
+          <BlogRightSide />
         </div>
       </div>
     </>

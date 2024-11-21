@@ -22,13 +22,13 @@ function BlogSidebar() {
         <li>
           <NavLink className="trans" to={`/posts`}>
             <i className="icon-feed"></i>
-            <span>Posts</span>
+            <span>Following</span>
           </NavLink>
         </li>
         <li>
           <NavLink className="trans" to={`/blogs/addblog`}>
             <i className="icon-add"></i>
-            <span>Create Post</span>
+            <span>Upload</span>
           </NavLink>
         </li>
         <li>
@@ -46,7 +46,7 @@ function BlogSidebar() {
         <li>
           <NavLink className="trans" to={`/blogs/profile`}>
             <i className="icon-build"></i>
-            <span>Account Settings</span>
+            <span>Account</span>
           </NavLink>
         </li>
         <li>

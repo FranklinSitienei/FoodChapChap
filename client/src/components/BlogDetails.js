@@ -298,7 +298,7 @@ function BlogDetails({ blogs }) {
               />
             </figure>
             <div className="text-holder">
-              <span className="name">{user.username}</span>
+              <span className="name">{author}</span>
               <span className="date">Oct 28, 2016</span>
             </div>
             <button

@@ -2,6 +2,14 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 100%;
+}
+
+.blog-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .author-info {
@@ -189,4 +197,9 @@
   border: none;
   cursor: pointer;
   border-radius: 3px;
+}
+
+.blog-right-sidebar {
+  flex: 1; /* Takes up 25% of the width */
+  position: relative;
 }

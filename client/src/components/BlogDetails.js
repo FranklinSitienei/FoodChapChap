@@ -290,114 +290,116 @@ function BlogDetails({ blogs }) {
         </div>
         {/* Blog content */}
         <div className="container">
-          <div className="author-info">
-            <figure>
-              <img
-                src={`${process.env.PUBLIC_URL}/assets/extra-images/avatar-01.jpeg`}
-                alt="Author"
-              />
-            </figure>
-            <div className="text-holder">
-              <span className="name">{author}</span>
-              <span className="date">Oct 28, 2016</span>
+          <div className="blog-content">
+            <div className="author-info">
+              <figure>
+                <img
+                  src={`${process.env.PUBLIC_URL}/assets/extra-images/avatar-01.jpeg`}
+                  alt="Author"
+                />
+              </figure>
+              <div className="text-holder">
+                <span className="name">{author}</span>
+                <span className="date">Oct 28, 2016</span>
+              </div>
+              <button
+                onClick={isFollowing ? handleUnfollow : handleFollow}
+                className={isFollowing ? "btn-danger" : "btn-primary"}
+              >
+                {isFollowing ? "Unfollow" : "Follow"}
+              </button>
             </div>
-            <button
-              onClick={isFollowing ? handleUnfollow : handleFollow}
-              className={isFollowing ? "btn-danger" : "btn-primary"}
-            >
-              {isFollowing ? "Unfollow" : "Follow"}
-            </button>
-          </div>
 
-          <div className="title-area">
-            <h2>{title}</h2>
-            <p>{content}</p>
-            <img src={image_url} alt="Blog" className="blog-image" />
-          </div>
+            <div className="title-area">
+              <h2>{title}</h2>
+              <p>{content}</p>
+              <img src={image_url} alt="Blog" className="blog-image" />
+            </div>
 
-          <div className="tags-list">
-            <h6>Tags:</h6>
-            <ul>
-              {["Roll", "Home", "Blog", "Lists"].map((tag) => (
-                <li key={tag}>
-                  <a href="#">{tag}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
+            <div className="tags-list">
+              <h6>Tags:</h6>
+              <ul>
+                {["Roll", "Home", "Blog", "Lists"].map((tag) => (
+                  <li key={tag}>
+                    <a href="#">{tag}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div className="views-likes">
-            <div>Views: 494 Likes: 1</div>
-            <div>Comments</div>
-          </div>
+            <div className="views-likes">
+              <div>Views: 494 Likes: 1</div>
+              <div>Comments</div>
+            </div>
 
-          <div className="comments-section">
-            <h3>Comments</h3>
-            {Array.isArray(comments) && comments.map((comment) => (
-              <div className="comment" key={comment.id}>
-                <div className="user-info">
-                  <span className="name">{comment.user.username}</span>
-                  <span className="date">
-                    {new Date(comment.created_at).toLocaleDateString()}
-                  </span>
-                </div>
-                <p className="content">{comment.content}</p>
-                <div className="comment-actions">
-                  <button onClick={() => handleLikeComment(comment.id)}>Like</button>
-                  <button onClick={() => setCommentIdForReply(comment.id)}>
-                    Reply
+            <div className="comments-section">
+              <h3>Comments</h3>
+              {Array.isArray(comments) && comments.map((comment) => (
+                <div className="comment" key={comment.id}>
+                  <div className="user-info">
+                    <span className="name">{comment.user.username}</span>
+                    <span className="date">
+                      {new Date(comment.created_at).toLocaleDateString()}
+                    </span>
+                  </div>
+                  <p className="content">{comment.content}</p>
+                  <div className="comment-actions">
+                    <button onClick={() => handleLikeComment(comment.id)}>Like</button>
+                    <button onClick={() => setCommentIdForReply(comment.id)}>
+                      Reply
+                    </button>
+                  </div>
+
+                  {showAllReplies[comment.id] &&
+                    comment.replies.map((reply) => (
+                      <div className="reply-section" key={reply.id}>
+                        <div className="user-info">
+                          <span className="name">{reply.user.username}</span>
+                          <span className="date">
+                            {new Date(reply.created_at).toLocaleDateString()}
+                          </span>
+                        </div>
+                        <p className="content">{reply.content}</p>
+                        <div className="comment-actions">
+                          <button>Like</button>
+                        </div>
+                      </div>
+                    ))}
+
+                  {commentIdForReply === comment.id && (
+                    <div className="comment-input reply-section">
+                      <textarea
+                        value={newReply}
+                        onChange={(e) => setNewReply(e.target.value)}
+                        placeholder="Write a reply..."
+                      />
+                      <button onClick={handleAddReply}>Reply</button>
+                    </div>
+                  )}
+
+                  <button
+                    onClick={() => toggleReplies(comment.id)}
+                    className="toggle-replies"
+                  >
+                    {showAllReplies[comment.id] ? "Hide Replies" : "Show Replies"}
                   </button>
                 </div>
-
-                {showAllReplies[comment.id] &&
-                  comment.replies.map((reply) => (
-                    <div className="reply-section" key={reply.id}>
-                      <div className="user-info">
-                        <span className="name">{reply.user.username}</span>
-                        <span className="date">
-                          {new Date(reply.created_at).toLocaleDateString()}
-                        </span>
-                      </div>
-                      <p className="content">{reply.content}</p>
-                      <div className="comment-actions">
-                        <button>Like</button>
-                      </div>
-                    </div>
-                  ))}
-
-                {commentIdForReply === comment.id && (
-                  <div className="comment-input reply-section">
-                    <textarea
-                      value={newReply}
-                      onChange={(e) => setNewReply(e.target.value)}
-                      placeholder="Write a reply..."
-                    />
-                    <button onClick={handleAddReply}>Reply</button>
-                  </div>
-                )}
-
-                <button
-                  onClick={() => toggleReplies(comment.id)}
-                  className="toggle-replies"
-                >
-                  {showAllReplies[comment.id] ? "Hide Replies" : "Show Replies"}
-                </button>
+              ))}
+              <div className="comment-input">
+                <textarea
+                  value={newComment}
+                  onChange={(e) => setNewComment(e.target.value)}
+                  placeholder="Write a comment..."
+                />
+                <button onClick={handleAddComment}>Comment</button>
               </div>
-            ))}
-            <div className="comment-input">
-              <textarea
-                value={newComment}
-                onChange={(e) => setNewComment(e.target.value)}
-                placeholder="Write a comment..."
-              />
-              <button onClick={handleAddComment}>Comment</button>
+
             </div>
 
           </div>
-
-        </div>
-        <div className="blog-right-sidebar">
-          <BlogRightSide />
+          <div className="blog-right-sidebar">
+            <BlogRightSide />
+          </div>
         </div>
       </div>
     </>

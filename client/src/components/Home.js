@@ -1735,7 +1735,7 @@ function Home() {
                       <div className="img-frame">
                         <figure>
                           <img
-                            src="https://foodbakery.chimpgroup.com/homev1/wp-content/uploads/2016/12/mobile-apps.png"
+                            src="https://foodbakery.chimpgroup.com/homev1/wp-content/uploads/mobile-apps-1.png"
                             alt="FoodBakery in your mobile! Get our app"
                           />
                         </figure>
@@ -1750,13 +1750,13 @@ function Home() {
                         </div>
                         <a className="app-btn" href="#">
                           <img
-                            src="https://foodbakery.chimpgroup.com/homev1/wp-content/uploads/2016/10/app-img1-1.png"
+                            src="https://foodbakery.chimpgroup.com/homev1/wp-content/uploads/app-img1-1-1.png"
                             alt="foodbakery_var_app_store_image_url_array"
                           />
                         </a>
                         <a className="app-btn" href="">
                           <img
-                            src="https://foodbakery.chimpgroup.com/homev1/wp-content/uploads/2016/10/app-img2-1.png"
+                            src="https://foodbakery.chimpgroup.com/homev1/wp-content/uploads/app-img2-1-1.png"
                             alt="foodbakery_var_google_store_image_url_array"
                           />
                         </a>

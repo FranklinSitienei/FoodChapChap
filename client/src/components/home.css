@@ -1,86 +1,75 @@
 .rider-registration {
-    position: relative;
-    border: none;
-    border-radius: 10px;
-    overflow: hidden;
-    width: 70%;
-    transition: background-color 0.3s ease;
-    height: 320px;
-    margin-left: 100px;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  
-  
-  .rider-registration__top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-  }
-  
-  .rider-registration__icon {
-    border-radius: 50%; /* Make the image rounded */
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
-  
-  .rider-registration:hover .rider-registration__icon {
-    transform: translateX(-5px); /* Slide to the left on hover */
-    background-color: #ff6b6b; /* Red background color on hover */
-  }
-  
-  .rider-registration__text {
-    flex: 1;
-    text-align: center;
-    font-size: medium;
-    font-weight: bold;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  }
-  
-  .rider-registration__title {
-    margin: 0;
-    font-size: larger;
-    color: red;
-    margin-top: 5px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  }
-  
-  .rider-registration__description {
-    color: #555;
-  }
-  
-  .rider-registration__link {
-    margin-top: 5px;
-   
-    display: block;
-    width: 40%;
-    text-decoration: none;
-    padding: 10px;
-    text-align: center;
-    align-items: center;
-    color: white;
-    border-radius: 0 0 10px 10px;
-    transition: background-color 0.3s ease;
-    align-items: center;
-  }
+  display: flex; /* Aligns items horizontally */
+  justify-content: space-between; /* Adds space between items */
+  align-items: center; /* Centers items vertically */
+  width: 100%; /* Make sure it spans the full width */
+  margin-left: 20px;
+  height: 320px;
+  transition: background-color 0.3s ease;
+}
 
-  .btn{
-    background-color: red;
-    border-radius: 10px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: bold;
-  }
+.rider-registration__top {
+  display: flex; /* Aligns items horizontally */
+  flex-direction: column; /* Stacks items vertically inside the box */
+  align-items: center; /* Centers the content inside each section */
+  padding: 10px;
+  width: 45%; /* Ensures both sections fit side by side */
+  gap: 20px; /* Creates a gap between the two elements */
+}
 
-  .btn:hover{
-    background-color: black;
-    color: white;
-  }
-  
-  
-  
+.rider-registration__icon {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.rider-registration:hover .rider-registration__icon {
+  transform: translateX(-5px);
+  background-color: #ff6b6b;
+}
+
+.rider-registration__text {
+  text-align: center;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.rider-registration__title {
+  margin: 0;
+  font-size: larger;
+  color: red;
+  margin-top: 5px;
+}
+
+.rider-registration__description {
+  color: #555;
+}
+
+.rider-registration__link {
+  display: block;
+  width: 40%;
+  text-decoration: none;
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+  color: white;
+  border-radius: 0 0 10px 10px;
+  transition: background-color 0.3s ease;
+}
+
+.btn {
+  background-color: red;
+  border-radius: 10px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+}

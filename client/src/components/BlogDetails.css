@@ -1,6 +1,6 @@
 .container {
   margin: 20px auto;
-  max-width: 800px;
+  max-width: 100%;
 }
 
 .author-info {
@@ -108,7 +108,7 @@
   color: white;
 }
 
-.views-likes {
+.blog-info {
   display: flex;
   justify-content: space-between;
   align-items: center;

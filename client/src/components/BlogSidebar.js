@@ -14,13 +14,13 @@ function BlogSidebar() {
     <div className={`blog-sidebar ${isExpanded ? "expanded" : "collapsed"}`} style={{ height: "100%" }}>
       <ul>
         <li>
-          <NavLink className="trans" to={`/blogdash`}>
+          <NavLink className="trans" to={`/blogs`}>
             <i className="icon-dashboard3"></i>
             <span>Dashboard</span>
           </NavLink>
         </li>
         <li>
-          <NavLink className="trans" to={`/blogdash/posts`}>
+          <NavLink className="trans" to={`/posts`}>
             <i className="icon-feed"></i>
             <span>Posts</span>
           </NavLink>
@@ -32,25 +32,25 @@ function BlogSidebar() {
           </NavLink>
         </li>
         <li>
-          <NavLink className="trans" to={`/blogdash/comments`}>
+          <NavLink className="trans" to={`/blogs/comments`}>
             <i className="icon-comment2"></i>
             <span>Comments</span>
           </NavLink>
         </li>
         <li>
-          <NavLink className="trans" to={`/blogdash/categories`}>
+          <NavLink className="trans" to={`/blogs/categories`}>
             <i className="icon-list"></i>
             <span>Categories</span>
           </NavLink>
         </li>
         <li>
-          <NavLink className="trans" to={`/blogdash/profile`}>
+          <NavLink className="trans" to={`/blogs/profile`}>
             <i className="icon-build"></i>
             <span>Account Settings</span>
           </NavLink>
         </li>
         <li>
-          <NavLink className="trans" to={`/blogdash`}>
+          <NavLink className="trans" to={`/blogs`}>
             <i className="icon-log-out"></i>
             <span>Sign out</span>
           </NavLink>

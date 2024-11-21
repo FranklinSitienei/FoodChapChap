@@ -394,6 +394,9 @@ function BlogDetails({ blogs }) {
             </div>
 
           </div>
+
+        </div>
+        <div className="blog-right-sidebar">
           <BlogRightSide />
         </div>
       </div>

@@ -1,6 +1,7 @@
 .container {
-  margin: 20px auto;
-  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .author-info {
@@ -62,9 +63,10 @@
   color: white;
 }
 
-.title-area h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
+.title-area {
+  font-size: 5px;
+  margin: 0;
+  color: #333;
 }
 
 .title-area p {

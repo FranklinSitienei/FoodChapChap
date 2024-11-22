@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_07_09_111015) do
+ActiveRecord::Schema.define(version: 2024_11_22_081504) do
 
   create_table "blogs", force: :cascade do |t|
     t.string "title"
@@ -23,6 +23,10 @@ ActiveRecord::Schema.define(version: 2024_07_09_111015) do
     t.integer "dislikes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "like_count", default: 0
+    t.integer "comment_count", default: 0
+    t.integer "reply_count", default: 0
+    t.datetime "created_date"
     t.index ["user_id"], name: "index_blogs_on_user_id"
   end
 
@@ -49,6 +53,9 @@ ActiveRecord::Schema.define(version: 2024_07_09_111015) do
     t.integer "blog_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "like_count", default: 0
+    t.integer "reply_count", default: 0
+    t.datetime "created_date"
     t.index ["blog_id"], name: "index_comments_on_blog_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
@@ -133,6 +140,8 @@ ActiveRecord::Schema.define(version: 2024_07_09_111015) do
     t.integer "comment_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "like_count", default: 0
+    t.datetime "created_date"
     t.index ["comment_id"], name: "index_replies_on_comment_id"
     t.index ["user_id"], name: "index_replies_on_user_id"
   end

@@ -3,21 +3,29 @@ Rails.application.routes.draw do
   resources :likes
   resources :yummypoints, only: [:create,:index,:show]
   resources :bookings
-  resources :blogs do
-    resources :comments, only: [:create, :update, :destroy] do
-      member do
-        post 'like'
-      end
-      resources :replies, only: [:create, :update, :destroy] do
-        member do
-          post 'like'
-        end
-      end
-      collection do
-        get :fetch_likes_from_followed
-      end
-    end
-  end
+
+  # Blog Routes
+  get '/blogs', to: 'blogs#index'           # List all blogs
+  get '/blogs/:id', to: 'blogs#show', as: 'blog'  # View a specific blog
+  post '/blog/create', to: 'blogs#create'         # Create a new blog
+  patch '/blogs/:id/update', to: 'blogs#update'    # Update a specific blog
+  delete '/blogs/:id/delete', to: 'blogs#destroy'  # Delete a specific blog
+  post '/blogs/:id/like', to: 'blogs#like'  # Like/unlike a blog
+  get '/blogs/likes/followed', to: 'blogs#following_creator_or_liker' # Fetch likes from followed users
+
+  # Comment Routes
+  get '/blogs/:blog_id/comments', to: 'comments#index'                  # All comment on a eachblog
+  post '/blogs/:blog_id/comments/create', to: 'comments#create'         # Create a comment on a blog
+  patch '/blogs/:blog_id/comments/:id/update', to: 'comments#update'    # Update a specific comment
+  delete '/blogs/:blog_id/comments/:id/delete', to: 'comments#destroy'  # Delete a specific comment
+  post '/blogs/:blog_id/comments/:id/like', to: 'comments#like'  # Like/unlike a comment
+
+  # Reply Routes
+  get '/blogs/:blog_id/comments/:comment_id/replies', to: 'replies#index'         # Create a reply to a comment
+  post '/blogs/:blog_id/comments/:comment_id/replies/create', to: 'replies#create'         # Create a reply to a comment
+  patch '/blogs/:blog_id/comments/:comment_id/replies/:id/update', to: 'replies#update'    # Update a specific reply
+  delete '/blogs/:blog_id/comments/:comment_id/replies/:id/delete', to: 'replies#destroy'  # Delete a specific reply
+  post '/blogs/:blog_id/comments/:comment_id/replies/:id/like', to: 'replies#like'  # Like/unlike a reply
   
   resources :cuisines
   resources :restaurants, only: [:update]
@@ -41,7 +49,7 @@ Rails.application.routes.draw do
   end
   patch '/users/confirmdelivery', to: 'orders#confirm_delivery'
   get '/riders/orders', to: 'orders#fetch_delivery_orders'
-  resources :comments
+ 
   resources :reviews
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
@@ -68,8 +76,8 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
 
   
-  resources :users, only: [:index]
-  post '/google_login', to: 'sessions#google_login'
+resources :users, only: [:index]
+post '/google_login', to: 'sessions#google_login'
 post "/signup", to: 'users#create'
 
 post "/riders/signup", to: 'riders#create'

@@ -163,205 +163,114 @@ orderitem6 = Orderitem.create(order_id: order6.id, food_id: food7.id, quantity: 
 orderitem7 = Orderitem.create(order_id: order7.id, food_id: food8.id, quantity: "1", price: "5500")
 
 
-#  # Create sample data for blog posts
-blog1=Blog.create(
+# Create sample data for blog posts
+blog1 = Blog.create(
   title: 'Delicious Pasta Recipe',
   content: 'In this post, we share our favorite pasta recipe that is both easy to make and incredibly tasty. You won\'t want to miss it!',
   author: 'ChefFoodie',
   user_id: user1.id,
   category: 'Recipes',
   image_url: 'https://d4t7t8y8xqo0t.cloudfront.net/resized/750X436/eazytrendz%2F2832%2Ftrend20200515161910.jpg',
-  likes: 42,
-  dislikes: 10
+  like_count: 42,
+  comment_count: 2,
+  reply_count: 3,
+  created_at: Time.now
 )
 
-blog2=Blog.create(
+blog2 = Blog.create(
   title: 'Exploring Street Food',
   content: 'Join us on a culinary adventure as we explore the vibrant world of street food. From tacos to samosas, we have got it all covered!',
   author: 'FoodExplorer',
   user_id: user2.id,
   category: 'Street Food',
   image_url: 'https://www.mnarani.net/Blog-MnaraniTales/wp-content/uploads/2019/11/shutterstock_403183810-6-1024x681.jpg',
-  likes: 30,
-  dislikes: 5
+  like_count: 30,
+  comment_count: 1,
+  reply_count: 2,
+  created_at: Time.now
 )
-blog3=Blog.create(
+
+blog3 = Blog.create(
   title: 'International Food Tour',
   content: 'Embark on a culinary journey around the world with our International Food Tour. Explore diverse cuisines and flavors!',
   author: 'FoodExplorer',
   user_id: user3.id,
   category: 'Travel and Food',
   image_url: 'https://tastet.ca/wp-content/uploads/2020/12/32--164-2020-09-29-0.jpg',
-  likes: 45,
-  dislikes: 7
+  like_count: 45,
+  comment_count: 1,
+  reply_count: 1,
+  created_at: Time.now
 )
 
-blog4=Blog.create(
-  title: 'Farm-to-Table Dining',
-  content: 'Learn about the farm-to-table movement and how its changing the way we think about the food we eat.',
-  author: 'FarmToFork',
-  user_id: user4.id,
-  category: 'Sustainability',
-  image_url: 'https://images.squarespace-cdn.com/content/v1/56a2785c69a91af45e06a188/1543941510757-HDBA1VGZYCSIN9NIBCIK/Restaurant-Farm-Table-Logistics.jpeg?format=1500w',
-  likes: 38,
-  dislikes: 6
-)
-
-blog5=Blog.create(
-  title: 'Cooking with Seasonal Ingredients',
-  content: 'Discover the joys of cooking with fresh, seasonal ingredients and how it elevates the flavors in your dishes.',
-  author: 'SeasonalChef',
-  user_id: user5.id,
-  category: 'Cooking Tips',
-  image_url: 'https://img.taste.com.au/I1ooYNfN/w720-h480-cfill-q80/taste/2020/09/october20_easy-vegetable-kofta-salad-taste-165112-1.jpg',
-  likes: 50,
-  dislikes: 12
-)
-
-blog6=Blog.create(
-  title: 'Food Photography Tips',
-  content: 'Capture the beauty of your culinary creations with our food photography tips and tricks. Your Instagram feed will thank you!',
-  author: 'PhotoFoodie',
-  user_id: user6.id,
-  category: 'Photography',
-  image_url: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80',
-  likes: 60,
-  dislikes: 9
-)
-
-blog7=Blog.create(
-  title: 'Spice Up Your BBQ',
-  content: 'Get ready for a sizzling summer with our BBQ guide. From marinades to grilling techniques, we have you covered.',
-  author: 'BBQMaster',
-  user_id: user7.id,
-  category: 'Grilling',
-  image_url: 'https://www.kcrw.com/culture/shows/good-food/barbecue-bbq-grilling-recipes/@@images/image/page-header?v=1688315220.64',
-  likes: 75,
-  dislikes: 14
-)
-
-# Create sample data for comments on food-related blog posts
-# Creating comments
-comment1=Comment.create(
+# Create sample data for comments
+comment1 = Comment.create(
   content: 'This pasta recipe is amazing! I tried it last night, and it was a hit with my family.',
   user_id: user9.id,
   blog_id: blog1.id,
-  likes: 15
+  like_count: 15,
+  reply_count: 2,
+  created_at: Time.now
 )
 
-comment2=Comment.create(
+comment2 = Comment.create(
   content: 'I love street food, and this post has me craving some right now!',
   user_id: user8.id,
   blog_id: blog2.id,
-  likes: 8
+  like_count: 8,
+  reply_count: 2,
+  created_at: Time.now
 )
 
-comment3=Comment.create(
+comment3 = Comment.create(
   content: 'The pictures in this post are making me hungry!',
   user_id: user7.id,
   blog_id: blog3.id,
-  likes: 12
+  like_count: 12,
+  reply_count: 1,
+  created_at: Time.now
 )
 
-comment4=Comment.create(
-  content: 'I love trying food from different countries. The International Food Tour sounds like a dream!',
-  user_id: user6.id,
-  blog_id: blog4.id,
-  likes: 7
-)
-
-comment5=Comment.create(
-  content: 'Farm-to-table dining is the future. Its great to see a focus on sustainability in the food industry.',
-  user_id: user5.id,
-  blog_id: blog5.id,
-  likes: 15
-)
-
-comment6=Comment.create(
-  content: 'Cooking with seasonal ingredients adds so much depth to dishes. I cant wait to read that blog post!',
-  user_id: user4.id,
-  blog_id: blog6.id,
-  likes: 12
-)
-
-comment7=Comment.create(
-  content: 'Ive been trying to improve my food photography. Looking forward to the tips in the Food Photography Tips post!',
-  user_id: user3.id,
-  blog_id: blog7.id,
-  likes: 22
-)
-
-comment8=Comment.create(
-  content: 'Summer BBQs are the best! BBQMaster always has the best grilling advice.',
-  user_id: user2.id,
-  blog_id: blog1.id,
-  likes: 28
-)
-
-#replies
+# Create sample data for replies
 Reply.create(
   content: 'I tried it too, and my family loved it as well!',
   user_id: user1.id,
   comment_id: comment1.id,
-  likes: 5
+  like_count: 5,
+  created_at: Time.now
 )
 
 Reply.create(
   content: 'I have to try this recipe soon.',
   user_id: user2.id,
-  comment_id: comment2.id,
-  likes: 3
+  comment_id: comment1.id,
+  like_count: 7,
+  created_at: Time.now
 )
 
 Reply.create(
   content: 'Street food is the best!',
   user_id: user3.id,
-  comment_id: comment3.id,
-  likes: 4
+  comment_id: comment2.id,
+  like_count: 4,
+  created_at: Time.now
+)
+
+Reply.create(
+  content: 'Nothing beats this.',
+  user_id: user9.id,
+  comment_id: comment2.id,
+  like_count: 10,
+  created_at: Time.now
 )
 
 Reply.create(
   content: 'Agreed, those pictures are fantastic!',
   user_id: user4.id,
-  comment_id: comment4.id,
-  likes: 2
+  comment_id: comment3.id,
+  like_count: 2,
+  created_at: Time.now
 )
-
-Reply.create(
-  content: 'I wish I could go on that food tour!',
-  user_id: user5.id,
-  comment_id: comment5.id,
-  likes: 6
-)
-
-Reply.create(
-  content: 'Absolutely, sustainability is crucial.',
-  user_id: user6.id,
-  comment_id: comment6.id,
-  likes: 3
-)
-
-Reply.create(
-  content: 'Seasonal ingredients really do make a difference.',
-  user_id: user7.id,
-  comment_id: comment7.id,
-  likes: 4
-)
-
-Reply.create(
-  content: 'Me too.',
-  user_id: user8.id,
-  comment_id: comment1.id,
-  likes: 7
-)
-
-Reply.create(
-  content: 'Nothing beats this',
-  user_id: user9.id,
-  comment_id: comment2.id,
-  likes: 10
-)
-
 
 # Seed data for bookings
 bookings_data = [

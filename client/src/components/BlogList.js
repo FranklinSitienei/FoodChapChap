@@ -42,7 +42,7 @@ function BlogList() {
                     </figure>
                     <div className="pofile-info">
                       <span className="name">{blog.author}</span>
-                      <span className="date">Oct 28, 2016</span>
+                      <span className="date">{blog.timestamps}</span>
                     </div>
                   </div>
                   <div className="blog-post">

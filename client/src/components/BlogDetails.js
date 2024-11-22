@@ -15,6 +15,7 @@ function BlogDetails({ blogs }) {
   const history = useNavigate();
 
   useEffect(() => {
+    // Fetch current user data
     fetch("/me", {
       headers: {
         "Authorization": `Bearer ${localStorage.getItem("user")}`
@@ -25,6 +26,7 @@ function BlogDetails({ blogs }) {
 
     const blog = blogs.find((blog) => blog.id == id);
     if (blog) {
+      // Fetch blog comments
       fetch(`/blogs/${id}/comments`, {
         headers: {
           "Authorization": `Bearer ${localStorage.getItem("user")}`
@@ -37,7 +39,8 @@ function BlogDetails({ blogs }) {
           setComments([]);
         });
 
-      fetch(`/users/${blog.user_id}/is_following`, {
+      // Check follow status
+      fetch(`/blogs/likes/followed`, {
         headers: {
           "Authorization": `Bearer ${localStorage.getItem("user")}`
         }
@@ -57,26 +60,26 @@ function BlogDetails({ blogs }) {
       user_id: user.id,
       blog_id: id,
     };
-    fetch(`/blogs/${id}/comments`, {
+    fetch(`/blogs/${id}/comments/create`, {
+      method: "POST",
       headers: {
-        "Authorization": `Bearer ${localStorage.getItem("user")}`
+        "Authorization": `Bearer ${localStorage.getItem("user")}`,
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(newCommentObj),
     })
       .then((response) => response.json())
       .then((commentsData) => {
-        console.log("Comments data:", commentsData);
         setComments(commentsData);
+        setNewComment("");
       })
       .catch((error) => {
-        console.error("Error fetching comments:", error);
-        setComments([]);
+        console.error("Error adding comment:", error);
       });
-
   };
 
   const handleLikeComment = (commentId) => {
-    fetch(`/comments/${commentId}/like`, {
+    fetch(`/blogs/${id}/comments/${commentId}/like`, {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${localStorage.getItem("user")}`
@@ -102,7 +105,7 @@ function BlogDetails({ blogs }) {
       user_id: user.id,
       comment_id: commentIdForReply,
     };
-    fetch(`/replies`, {
+    fetch(`/blogs/${id}/comments/${commentIdForReply}/replies/create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -339,7 +342,7 @@ function BlogDetails({ blogs }) {
                   <div className="user-info">
                     <span className="name">{comment.user.username}</span>
                     <span className="date">
-                      {new Date(comment.created_at).toLocaleDateString()}
+                      {new Date(comment.date).toLocaleDateString()}
                     </span>
                   </div>
                   <p className="content">{comment.content}</p>
@@ -366,42 +369,43 @@ function BlogDetails({ blogs }) {
                       </div>
                     ))}
 
-                  {commentIdForReply === comment.id && (
-                    <div className="comment-input reply-section">
-                      <textarea
-                        value={newReply}
-                        onChange={(e) => setNewReply(e.target.value)}
-                        placeholder="Write a reply..."
-                      />
-                      <button onClick={handleAddReply}>Reply</button>
-                    </div>
-                  )}
-
                   <button
                     onClick={() => toggleReplies(comment.id)}
-                    className="toggle-replies"
                   >
-                    {showAllReplies[comment.id] ? "Hide Replies" : "Show Replies"}
+                    {showAllReplies[comment.id] ? "Hide replies" : "Show replies"}
                   </button>
                 </div>
               ))}
-              <div className="comment-input">
-                <textarea
-                  value={newComment}
-                  onChange={(e) => setNewComment(e.target.value)}
-                  placeholder="Write a comment..."
-                />
-                <button onClick={handleAddComment}>Comment</button>
-              </div>
-
             </div>
 
+            <form onSubmit={handleAddComment} className="comment-form">
+              <input
+                type="text"
+                placeholder="Add a comment"
+                value={newComment}
+                onChange={(e) => setNewComment(e.target.value)}
+              />
+              <button type="submit">Post</button>
+            </form>
+
+            {commentIdForReply && (
+              <form onSubmit={handleAddReply} className="reply-form">
+                <input
+                  type="text"
+                  placeholder="Write a reply..."
+                  value={newReply}
+                  onChange={(e) => setNewReply(e.target.value)}
+                />
+                <button type="submit">Reply</button>
+              </form>
+            )}
           </div>
-          <div className="blog-right-sidebar">
+
+          </div>
+          
             <BlogRightSide />
-          </div>
+          
         </div>
-      </div>
     </>
   );
 }

@@ -1,11 +1,18 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user
 
+  def index
+    blog = Blog.find(params[:blog_id])
+    comments = blog.comments.includes(:user, :likes, :replies) # Preload related data for performance
+    render json: comments, include: ['user', 'likes', 'replies']
+  end
+
   def create
     blog = Blog.find(params[:blog_id])
     comment = blog.comments.new(comment_params.merge(user: current_user))
 
     if comment.save
+      blog.increment!(:comment_count)
       render json: comment, status: :created
     else
       render json: { error: "Comment could not be created" }, status: :unprocessable_entity
@@ -24,14 +31,27 @@ class CommentsController < ApplicationController
 
   def destroy
     comment = current_user.comments.find(params[:id])
-    comment.destroy
-    head :no_content
-  end
+    blog = comment.blog
 
+    if comment.destroy
+      blog.decrement!(:comment_count)
+      head :no_content
+    else
+      render json: { error: "Comment could not be deleted" }, status: :unprocessable_entity
+    end
+  end
+  
   def like
     comment = Comment.find(params[:id])
-    comment.increment!(:likes)
-    render json: comment, status: :ok
+    if comment.likes.exists?(user: current_user)
+      comment.likes.find_by(user: current_user).destroy
+      comment.decrement!(:like_count)
+      render json: { message: "Comment unliked successfully" }, status: :ok
+    else
+      comment.likes.create(user: current_user)
+      comment.increment!(:like_count)
+      render json: { message: "Comment liked successfully" }, status: :ok
+    end
   end
 
   private

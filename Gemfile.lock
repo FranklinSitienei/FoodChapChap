@@ -69,6 +69,7 @@ GEM
       public_suffix (>= 2.0.2, < 7.0)
     base64 (0.2.0)
     bcrypt (3.1.20)
+    bigdecimal (3.1.8)
     builder (3.3.0)
     byebug (11.1.3)
     carrierwave (2.2.6)
@@ -132,6 +133,7 @@ GEM
     mini_magick (4.13.2)
     mini_mime (1.1.5)
     minitest (5.25.2)
+    mutex_m (0.3.0)
     net-imap (0.5.1)
       date
       net-protocol
@@ -282,8 +284,10 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
+  actionmailer
   active_model_serializers (~> 0.10.12)
   bcrypt (~> 3.1.7)
+  bigdecimal
   byebug
   carrierwave (~> 2.0)
   devise
@@ -292,6 +296,7 @@ DEPENDENCIES
   jwt
   listen (~> 3.3)
   mini_magick
+  mutex_m
   puma (~> 5.0)
   rack-cors
   rails (~> 6.1.3, >= 6.1.3.2)

@@ -13,7 +13,10 @@ gem 'puma', '~> 5.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'wdm', platforms: [:mingw, :mswin]
 gem 'faker'
+
 gem 'devise'
+gem 'actionmailer'
+
 gem 'rack-cors'
 gem 'jwt'
 # gem 'google_auth'

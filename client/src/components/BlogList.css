@@ -45,6 +45,8 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 100%;
+  font-size: small;
 }
 
 /* Blog masonry grid */
@@ -80,6 +82,7 @@
 
 .pofile-info .name {
   font-weight: bold;
+  margin: 0;
 }
 
 .pofile-info .date {

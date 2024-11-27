@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './BlogForm.css';
 import BlogSidebar from './BlogSidebar';
+import { FcAddImage } from "react-icons/fc";
 
 function BlogForm() {
   const [formData, setFormData] = useState({
@@ -124,7 +125,7 @@ function BlogForm() {
                                 <li className="gal-img">
                                   <div className="drag-list">
                                     <div className="item-thumb">
-                                      <img className="thumbnail" src={formData.image_url} alt="Blog" />
+                                      <img className="thumbnail" src={formData.image_url  || <FcAddImage />} alt="Blog" />
                                     </div>
                                     <div className="item-assts">
                                       <ul className="list-inline pull-right">

@@ -23,7 +23,7 @@ gem 'mini_magick'
 gem 'bigdecimal'
 gem 'mutex_m'
 
-gem 'sprockets-rails'
+gem 'sprockets', '~> 4.0'
 
 gem 'webpacker'
 

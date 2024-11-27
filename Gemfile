@@ -4,28 +4,24 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 6.1.7'
+gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-#  gem 'wdm', '~> 0.1.1'
+gem 'wdm', platforms: [:mingw, :mswin]
 gem 'faker'
-gem 'devise', '~> 4.9'
+gem 'devise'
 gem 'rack-cors'
 gem 'jwt'
 # gem 'google_auth'
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
 
-gem 'bigdecimal'
-gem 'mutex_m'
-
-gem 'sprockets', '~> 4.0'
-
-gem 'webpacker'
+gem 'sass-rails', '>= 6'
+gem 'webpacker', '~> 5.0'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'

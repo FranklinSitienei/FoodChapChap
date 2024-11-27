@@ -69,7 +69,6 @@ GEM
       public_suffix (>= 2.0.2, < 7.0)
     base64 (0.2.0)
     bcrypt (3.1.20)
-    bigdecimal (3.1.3)
     builder (3.3.0)
     byebug (11.1.3)
     carrierwave (2.2.6)
@@ -95,8 +94,16 @@ GEM
     erubi (1.13.0)
     faker (3.5.1)
       i18n (>= 1.8.11, < 2)
-    ffi (1.17.0-x64-mingw-ucrt)
+    ffi (1.17.0-aarch64-linux-gnu)
+    ffi (1.17.0-aarch64-linux-musl)
+    ffi (1.17.0-arm-linux-gnu)
+    ffi (1.17.0-arm-linux-musl)
+    ffi (1.17.0-arm64-darwin)
+    ffi (1.17.0-x86-linux-gnu)
+    ffi (1.17.0-x86-linux-musl)
+    ffi (1.17.0-x86_64-darwin)
     ffi (1.17.0-x86_64-linux-gnu)
+    ffi (1.17.0-x86_64-linux-musl)
     foreman (0.88.1)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -124,8 +131,7 @@ GEM
     method_source (1.1.0)
     mini_magick (4.13.2)
     mini_mime (1.1.5)
-    minitest (5.25.1)
-    mutex_m (0.1.2)
+    minitest (5.25.2)
     net-imap (0.5.1)
       date
       net-protocol
@@ -136,7 +142,15 @@ GEM
     net-smtp (0.5.0)
       net-protocol
     nio4r (2.7.4)
-    nokogiri (1.16.7-x64-mingw-ucrt)
+    nokogiri (1.16.7-aarch64-linux)
+      racc (~> 1.4)
+    nokogiri (1.16.7-arm-linux)
+      racc (~> 1.4)
+    nokogiri (1.16.7-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.16.7-x86-linux)
+      racc (~> 1.4)
+    nokogiri (1.16.7-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.16.7-x86_64-linux)
       racc (~> 1.4)
@@ -208,6 +222,16 @@ GEM
     ruby-vips (2.2.2)
       ffi (~> 1.12)
       logger
+    sass-rails (6.0.0)
+      sassc-rails (~> 2.1, >= 2.1.1)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     semantic_range (3.1.0)
     shoulda-matchers (4.5.1)
       activesupport (>= 4.2.0)
@@ -218,15 +242,18 @@ GEM
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
-    sqlite3 (1.7.3-x64-mingw-ucrt)
+    sqlite3 (1.7.3-aarch64-linux)
+    sqlite3 (1.7.3-arm-linux)
+    sqlite3 (1.7.3-arm64-darwin)
+    sqlite3 (1.7.3-x86-linux)
+    sqlite3 (1.7.3-x86_64-darwin)
     sqlite3 (1.7.3-x86_64-linux)
     ssrf_filter (1.2.0)
     thor (1.3.2)
+    tilt (2.4.0)
     timeout (0.4.2)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    tzinfo-data (1.2024.2)
-      tzinfo (>= 1.0.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     webpacker (5.4.4)
@@ -240,32 +267,42 @@ GEM
     zeitwerk (2.7.1)
 
 PLATFORMS
-  x64-mingw-ucrt
-  x86_64-linux
+  aarch64-linux
+  aarch64-linux-gnu
+  aarch64-linux-musl
+  arm-linux
+  arm-linux-gnu
+  arm-linux-musl
+  arm64-darwin
+  x86-linux
+  x86-linux-gnu
+  x86-linux-musl
+  x86_64-darwin
+  x86_64-linux-gnu
+  x86_64-linux-musl
 
 DEPENDENCIES
   active_model_serializers (~> 0.10.12)
   bcrypt (~> 3.1.7)
-  bigdecimal
   byebug
   carrierwave (~> 2.0)
-  devise (~> 4.9)
+  devise
   faker
   foreman (~> 0.87)
   jwt
   listen (~> 3.3)
   mini_magick
-  mutex_m
   puma (~> 5.0)
   rack-cors
-  rails (~> 6.1.7)
+  rails (~> 6.1.3, >= 6.1.3.2)
   rspec-json_expectations
   rspec-rails (~> 5.0.0)
+  sass-rails (>= 6)
   shoulda-matchers (~> 4.0)
-  sprockets-rails
   sqlite3 (~> 1.4)
   tzinfo-data
-  webpacker
+  wdm
+  webpacker (~> 5.0)
 
 BUNDLED WITH
    2.5.23

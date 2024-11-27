@@ -42,7 +42,7 @@ module Phase4RailsPuttingItAllTogetherAuth
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    config.assets.enabled = true
+    # config.assets.enabled = true
     config.assets.initialize_on_precompile = false
 
     # Only loads a smaller set of middleware suitable for API only apps.

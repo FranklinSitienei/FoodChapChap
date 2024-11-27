@@ -15,7 +15,7 @@ function BlogList() {
   const isLoggedIn = !!token;  // Check if the token exists
 
   useEffect(() => {
-    fetch('/blogs')
+    fetch('https://foodchapchap-qq3a.onrender.com/blogs')
       .then(response => response.json())
       .then(data => setBlogs(data))
       .catch(error => console.error('Error fetching blogs:', error));
@@ -27,7 +27,7 @@ function BlogList() {
       return;
     }
 
-    fetch(`/blogs/${blogId}/like`, {
+    fetch(`https://foodchapchap-qq3a.onrender.com/blogs/${blogId}/like`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ function BlogList() {
 
     const action = followedAuthors[author] ? 'unfollow' : 'follow';
 
-    fetch(`/users/${author}/${action}`, {
+    fetch(`https://foodchapchap-qq3a.onrender.com/users/${author}/${action}`, {
       method: action === 'follow' ? 'POST' : 'DELETE',
       headers: {
         'Content-Type': 'application/json',

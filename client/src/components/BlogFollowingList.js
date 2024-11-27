@@ -22,7 +22,7 @@ function BlogFollowingList() {
     }
 
     // Fetch blogs from users the current user is following
-    fetch('/users/fetch_following_blogs', {
+    fetch('https://foodchapchap-qq3a.onrender.com/users/fetch_following_blogs', {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`,  // Use the token directly
@@ -56,7 +56,7 @@ function BlogFollowingList() {
       return;
     }
 
-    fetch(`/blogs/${blogId}/like`, {
+    fetch(`https://foodchapchap-qq3a.onrender.com/blogs/${blogId}/like`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -81,7 +81,7 @@ function BlogFollowingList() {
 
     const action = followedAuthors[author] ? 'unfollow' : 'follow';
 
-    fetch(`/users/${author}/${action}`, {
+    fetch(`https://foodchapchap-qq3a.onrender.com/users/${author}/${action}`, {
       method: action === 'follow' ? 'POST' : 'DELETE',
       headers: {
         'Content-Type': 'application/json',

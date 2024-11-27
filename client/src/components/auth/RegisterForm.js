@@ -17,7 +17,7 @@ function RegisterForm({ onLogin }) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetch("/signup", {
+    fetch("https://foodchapchap-qq3a.onrender.com/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

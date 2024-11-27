@@ -14,7 +14,7 @@ function LoginForm({ onLogin }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("/login", {
+    fetch("https://foodchapchap-qq3a.onrender.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -40,7 +40,7 @@ function LoginForm({ onLogin }) {
   }
 
   const handleGoogleSignInSuccess = credentialResponse => {
-    fetch('/google_login', {
+    fetch('https://foodchapchap-qq3a.onrender.com/google_login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

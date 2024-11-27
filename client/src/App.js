@@ -76,17 +76,17 @@ function App() {
 
   useEffect(() => {
     // auto-login
-    fetch("/me").then((r) => {
+    fetch("https://foodchapchap-qq3a.onrender.com/me").then((r) => {
       if (r.ok) {
         r.json().then((user) => {
           setUser(user);
 
           if (user && user.id) {
-            fetch(`/orders/${user.id}`)
+            fetch(`https://foodchapchap-qq3a.onrender.com/orders/${user.id}`)
               .then((r) => r.json())
               .then((orders) => setOrders(orders));
 
-              fetch("/Points")
+              fetch("https://foodchapchap-qq3a.onrender.com/Points")
               .then((r) => r.json())
               .then((points) => setFoods(points));
 
@@ -94,15 +94,15 @@ function App() {
 
 
 
-            fetch("/blogs")
+            fetch("https://foodchapchap-qq3a.onrender.com/blogs")
               .then((r) => r.json())
               .then((blogs) => setBlogs(blogs));
 
-            fetch("/users")
+            fetch("https://foodchapchap-qq3a.onrender.com/users")
               .then((r) => r.json())
               .then((users) => setUsers(users));
 
-            fetch("/orders")
+            fetch("https://foodchapchap-qq3a.onrender.com/orders")
               .then((r) => r.json())
               .then((allorders) => setAllOrders(allorders));
           } else {
@@ -116,28 +116,28 @@ function App() {
 
 
   useEffect(() => {
-    fetch("/blogs")
+    fetch("https://foodchapchap-qq3a.onrender.com/blogs")
               .then((r) => r.json())
               .then((blogs) => setBlogs(blogs));
  }, []);
 
 
   useEffect(() => {
-    fetch("/restaurants")
+    fetch("https://foodchapchap-qq3a.onrender.com/restaurants")
               .then((r) => r.json())
               .then((restaurants) => SetRestaurants(restaurants));
  }, []);
 
 
  useEffect(() => {
-  fetch("/reviews")
+  fetch("https://foodchapchap-qq3a.onrender.com/reviews")
             .then((r) => r.json())
             .then((reviews) => SetReviews(reviews));
 }, []);
 
 
  useEffect(() => {
-  fetch("/orders")
+  fetch("https://foodchapchap-qq3a.onrender.com/orders")
             .then((r) => r.json())
             .then((orders) => setOrders(orders));
 }, []);

@@ -84,7 +84,7 @@ post "/signup", to: 'users#create'
 post "/riders/signup", to: 'riders#create'
 # post "/reviews", to: 'reviews#create'
 get "/me", to:'users#show'
-get '/user/orders', to: 'users#fetch_orders'
+get '/user/orders/:userid', to: 'users#fetch_orders'
 
 get "/riderme", to:'riders#show'
 post '/orders/:id/confirm', to:"orders#confirm"

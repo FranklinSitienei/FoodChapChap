@@ -10,14 +10,14 @@ function RestaurantFoods() {
 	const [message, setMessage] = useState('');
   
 	useEffect(() => {
-	  fetch('/me')
+	  fetch('https://foodchapchap-qq3a.onrender.com/me')
 		.then((response) => response.json())
 		.then((user) => setUserr(user));
 	}, []);
   
 	useEffect(() => {
 	  if (userr) {
-		fetch(`/restaurants/${userr.id}`)
+		fetch(`https://foodchapchap-qq3a.onrender.com/restaurants/${userr.id}`)
 		  .then((response) => response.json())
 		  .then((rest) => {
 			setRestaurant(rest);
@@ -27,7 +27,7 @@ function RestaurantFoods() {
 	}, [userr]);
   
 	function handleDeleteFood(id) {
-	  fetch(`/foods/${id}`, {
+	  fetch(`https://foodchapchap-qq3a.onrender.com/foods/${id}`, {
 		method: 'DELETE',
 	  })
 		.then((response) => {

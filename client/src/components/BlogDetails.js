@@ -16,7 +16,7 @@ function BlogDetails({ blogs }) {
 
   useEffect(() => {
     // Fetch current user data
-    fetch("/me", {
+    fetch("https://foodchapchap-qq3a.onrender.com/me", {
       headers: {
         "Authorization": `Bearer ${localStorage.getItem("user")}`
       }
@@ -27,7 +27,7 @@ function BlogDetails({ blogs }) {
     const blog = blogs.find((blog) => blog.id == id);
     if (blog) {
       // Fetch blog comments
-      fetch(`/blogs/${id}/comments`, {
+      fetch(`https://foodchapchap-qq3a.onrender.com/blogs/${id}/comments`, {
         headers: {
           "Authorization": `Bearer ${localStorage.getItem("user")}`
         }
@@ -40,7 +40,7 @@ function BlogDetails({ blogs }) {
         });
 
       // Check follow status
-      fetch(`/blogs/likes/followed`, {
+      fetch(`https://foodchapchap-qq3a.onrender.com/blogs/likes/followed`, {
         headers: {
           "Authorization": `Bearer ${localStorage.getItem("user")}`
         }
@@ -60,7 +60,7 @@ function BlogDetails({ blogs }) {
       user_id: user.id,
       blog_id: id,
     };
-    fetch(`/blogs/${id}/comments/create`, {
+    fetch(`https://foodchapchap-qq3a.onrender.com/blogs/${id}/comments/create`, {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${localStorage.getItem("user")}`,
@@ -79,7 +79,7 @@ function BlogDetails({ blogs }) {
   };
 
   const handleLikeComment = (commentId) => {
-    fetch(`/blogs/${id}/comments/${commentId}/like`, {
+    fetch(`https://foodchapchap-qq3a.onrender.com/blogs/${id}/comments/${commentId}/like`, {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${localStorage.getItem("user")}`
@@ -105,7 +105,7 @@ function BlogDetails({ blogs }) {
       user_id: user.id,
       comment_id: commentIdForReply,
     };
-    fetch(`/blogs/${id}/comments/${commentIdForReply}/replies/create`, {
+    fetch(`https://foodchapchap-qq3a.onrender.com/blogs/${id}/comments/${commentIdForReply}/replies/create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -134,7 +134,7 @@ function BlogDetails({ blogs }) {
   };
 
   const handleFollow = () => {
-    fetch(`/users/${user.id}/follow`, {
+    fetch(`https://foodchapchap-qq3a.onrender.com/users/${user.id}/follow`, {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${localStorage.getItem("user")}`
@@ -146,7 +146,7 @@ function BlogDetails({ blogs }) {
   };
 
   const handleUnfollow = () => {
-    fetch(`/users/${user.id}/unfollow`, {
+    fetch(`https://foodchapchap-qq3a.onrender.com/users/${user.id}/unfollow`, {
       method: "DELETE",
       headers: {
         "Authorization": `Bearer ${localStorage.getItem("user")}`

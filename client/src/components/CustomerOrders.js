@@ -17,7 +17,7 @@ function CustomerOrders() {
     // Fetch user data
     const token = localStorage.getItem('user');
 
-    fetch('/me', {
+    fetch('https://foodchapchap-qq3a.onrender.com/me', {
       headers: {
         'Authorization': `Bearer ${token}`
       }
@@ -34,7 +34,7 @@ function CustomerOrders() {
     if (userr) {
       const token = localStorage.getItem('user');
 
-      fetch('/user/orders', {
+      fetch('https://foodchapchap-qq3a.onrender.com/user/orders', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -54,7 +54,7 @@ function CustomerOrders() {
   const handleConfirmOrder = (orderId) => {
     const token = localStorage.getItem('user');
 
-    fetch(`/orders/${orderId}/confirm`, {
+    fetch(`https://foodchapchap-qq3a.onrender.com/orders/${orderId}/confirm`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${token}`
@@ -72,7 +72,7 @@ function CustomerOrders() {
   const handleCancelOrder = (orderId) => {
     const token = localStorage.getItem('user');
 
-    fetch(`/orders/${orderId}/cancel`, {
+    fetch(`https://foodchapchap-qq3a.onrender.com/orders/${orderId}/cancel`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${token}`
@@ -86,7 +86,7 @@ function CustomerOrders() {
 
         // Schedule self-deletion in 5 minutes
         setTimeout(() => {
-          fetch(`/orders/${orderId}`, {
+          fetch(`https://foodchapchap-qq3a.onrender.com/orders/${orderId}`, {
             method: 'DELETE',
             headers: {
               'Authorization': `Bearer ${token}`

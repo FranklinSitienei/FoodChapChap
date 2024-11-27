@@ -18,7 +18,7 @@ function RiderDash() {
         }
 
         console.log('Token found:', token);
-        const response = await fetch("http://localhost:3000/riders/me", {
+        const response = await fetch("https://foodchapchap-qq3a.onrender.com/riders/me", {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -55,7 +55,7 @@ function RiderDash() {
         return;
       }
 
-      const response = await fetch(`http://localhost:3000/orders/${orderId}/confirm_delivery`, {
+      const response = await fetch(`https://foodchapchap-qq3a.onrender.com/orders/${orderId}/confirm_delivery`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

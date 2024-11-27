@@ -15,7 +15,7 @@ function RiderProfile() {
 
   useEffect(() => {
     // Fetch rider data from local storage if available
-    const storedRider = localStorage.getItem('riderData');
+    const storedRider = localStorage.getItem('rider_token');
     if (storedRider) {
       setRider(JSON.parse(storedRider));
     }

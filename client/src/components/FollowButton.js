@@ -14,7 +14,7 @@ const FollowButton = ({ users }) => {
     try {
       if (isFollowing) {
         // Unfollow the user
-        await fetch(`/users/${user.id}/unfollow`, {
+        await fetch(`https://foodchapchap-qq3a.onrender.com/users/${user.id}/unfollow`, {
           method: 'DELETE',
           
           // Add any necessary headers here (e.g., authentication headers)
@@ -22,7 +22,7 @@ const FollowButton = ({ users }) => {
         setIsFollowing(false);
       } else {
         // Follow the user
-        await fetch(`/users/${user.id}/follow`, {
+        await fetch(`https://foodchapchap-qq3a.onrender.com/users/${user.id}/follow`, {
           method: 'POST',
           // Add any necessary headers here (e.g., authentication headers)
         });
@@ -37,7 +37,7 @@ const FollowButton = ({ users }) => {
     // Check if the current user is following the profile user
     const checkFollowingStatus = async () => {
       try {
-        const response = await fetch(`/users/${user.id}/is_following`);
+        const response = await fetch(`https://foodchapchap-qq3a.onrender.com/users/${user.id}/is_following`);
         if (response.ok) {
           const data = await response.json();
           setIsFollowing(data.isFollowing);

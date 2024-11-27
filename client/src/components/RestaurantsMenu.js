@@ -34,7 +34,7 @@ function RestaurantsMenu({ restaurants, updateCart }) {
       return;
     }
 
-    fetch("/me", {
+    fetch("https://foodchapchap-qq3a.onrender.com/me", {
       headers: {
         "Authorization": `Bearer ${token}`,
       },
@@ -149,7 +149,7 @@ function RestaurantsMenu({ restaurants, updateCart }) {
       price: totalall,
     };
   
-    fetch("/orders", {
+    fetch("https://foodchapchap-qq3a.onrender.com/orders", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -167,7 +167,7 @@ function RestaurantsMenu({ restaurants, updateCart }) {
           price: item.price,
         }));
   
-        return fetch("/orderitems", {
+        return fetch("https://foodchapchap-qq3a.onrender.com/orderitems", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -208,7 +208,7 @@ function RestaurantsMenu({ restaurants, updateCart }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch(`/bookings`, {
+    fetch(`https://foodchapchap-qq3a.onrender.com/bookings`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

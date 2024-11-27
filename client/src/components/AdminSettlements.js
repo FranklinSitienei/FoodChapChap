@@ -8,7 +8,7 @@ function AdminSettlements() {
   
 	useEffect(() => {
 	  // Fetch user information
-	  fetch("/me")
+	  fetch("https://foodchapchap-qq3a.onrender.com/me")
 		.then((response) => response.json())
 		.then((user) => setUserr(user));
 	}, []);
@@ -16,7 +16,7 @@ function AdminSettlements() {
 	useEffect(() => {
 	  // Fetch user's orders when userr changes
 	  if (userr) {
-		fetch(`/restaurants`)
+		fetch(`https://foodchapchap-qq3a.onrender.com/restaurants`)
 		  .then((response) => response.json())
 		  .then((rest) => setRestaurant(rest));
 	  }

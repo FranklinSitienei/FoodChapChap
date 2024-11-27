@@ -10,7 +10,7 @@ function CustomerBookings({ restaurants }) {
   
 	useEffect(() => {
 	  // Fetch user information
-	  fetch("/me")
+	  fetch("https://foodchapchap-qq3a.onrender.com/me")
 		.then((response) => response.json())
 		.then((user) => setUserr(user));
 	}, []);
@@ -18,7 +18,7 @@ function CustomerBookings({ restaurants }) {
 	useEffect(() => {
 	  // Fetch user's orders when userr changes
 	  if (userr) {
-		fetch(`/ordersuser/${userr.id}`)
+		fetch(`https://foodchapchap-qq3a.onrender.com/user/orders/${userr.id}`)
 		  .then((response) => response.json())
 		  .then((orders) => setUserOrders(orders));
 	  }

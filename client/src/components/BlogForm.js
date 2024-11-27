@@ -48,7 +48,7 @@ function BlogForm() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    fetch('/blogs', {
+    fetch('https://foodchapchap-qq3a.onrender.com/blog/create', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

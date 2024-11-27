@@ -16,11 +16,11 @@ function RiderDashboard() {
   const fetchRider = async () => {
     try {
       // Fetch login data from localStorage
-      const storedLogin = localStorage.getItem('rememberedLogin');
+      const storedLogin = localStorage.getItem('rider_token');
       if (storedLogin) {
         const loginData = JSON.parse(storedLogin);
         // Assuming your login data includes the rider's email
-        const response = await axios.get(`/riders/email/${loginData.email}`);
+        const response = await axios.get(`https://foodchapchap-qq3a.onrender.com/ridersme/${loginData.email}`);
         setRider(response.data);
         fetchDeliveries();
       } else {
@@ -33,7 +33,7 @@ function RiderDashboard() {
 
   const fetchDeliveries = async () => {
     try {
-      const response = await axios.get('/orders/deliveries');
+      const response = await axios.get('https://foodchapchap-qq3a.onrender.com/orders/deliveries');
       setOrders(response.data);
     } catch (error) {
       console.error(`Error fetching deliveries: ${error}`);
@@ -42,7 +42,7 @@ function RiderDashboard() {
 
   const confirmDelivery = async (orderId) => {
     try {
-      await axios.patch(`/orders/${orderId}/confirm_delivery`);
+      await axios.patch(`https://foodchapchap-qq3a.onrender.com/orders/${orderId}/confirm_delivery`);
       fetchDeliveries();
     } catch (error) {
       console.error(`Error confirming delivery: ${error}`);
@@ -51,7 +51,7 @@ function RiderDashboard() {
 
   const fetchUserDetails = async (userId) => {
     try {
-      const response = await axios.get(`/users/${userId}`);
+      const response = await axios.get(`https://foodchapchap-qq3a.onrender.com/users/${userId}`);
       setUserDetails(response.data);
     } catch (error) {
       console.error(`Error fetching user details: ${error}`);

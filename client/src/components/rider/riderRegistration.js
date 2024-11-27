@@ -67,7 +67,7 @@ const RiderRegistration = () => {
     }
 
     try {
-      const response = await fetch('http://127.0.0.1:3000/riders/signup', {
+      const response = await fetch('https://foodchapchap-qq3a.onrender.com/riders/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

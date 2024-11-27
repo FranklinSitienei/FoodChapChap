@@ -7,14 +7,14 @@ function AdminDash() {
 	const [orders, setOrders] = useState([]);
   
 	useEffect(() => {
-	  fetch("/me")
+	  fetch("https://foodchapchap-qq3a.onrender.com/me")
 		.then((response) => response.json())
 		.then((user) => setUserr(user));
 	}, []);
   
 	useEffect(() => {
         if (userr) {
-            fetch(`/orders`)
+            fetch(`https://foodchapchap-qq3a.onrender.com/orders`)
                 .then((response) => response.json())
                 .then((orders) => setOrders(orders));
         }

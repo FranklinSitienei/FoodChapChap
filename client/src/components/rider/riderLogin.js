@@ -31,7 +31,7 @@ const RiderLogin = () => {
   const handleLogin = async () => {
     setLoginData((prevData) => ({ ...prevData, loading: true }));
     try {
-      const response = await fetch('/riders/login', {
+      const response = await fetch('https://foodchapchap-qq3a.onrender.com/riders/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

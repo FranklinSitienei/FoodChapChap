@@ -25,7 +25,7 @@ function RestaurantAddfood() {
     setToken(token);
 
     if (token) {
-      fetch('/restaurants/me', {
+      fetch('https://foodchapchap-qq3a.onrender.com/restaurants/me', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -47,14 +47,14 @@ function RestaurantAddfood() {
   }, []);
 
   useEffect(() => {
-    fetch('/cuisines')
+    fetch('https://foodchapchap-qq3a.onrender.com/cuisines')
       .then((response) => response.json())
       .then((cuisines) => setCuisines(cuisines));
   }, []);
 
   useEffect(() => {
     if (userr) {
-      fetch(`/restaurants/${userr.id}`)
+      fetch(`https://foodchapchap-qq3a.onrender.com/restaurants/${userr.id}`)
         .then((response) => response.json())
         .then((rest) => {
           setRestaurant(rest);
@@ -78,7 +78,7 @@ function RestaurantAddfood() {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     // Send POST request with authentication token
-    fetch('/foods', {
+    fetch('https://foodchapchap-qq3a.onrender.com/foods', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

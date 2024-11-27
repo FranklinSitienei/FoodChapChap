@@ -7,13 +7,13 @@ function AdminRestaurants() {
 	const [restaurants, setRestaurants] = useState([]);
   
 	useEffect(() => {
-	  fetch("/me")
+	  fetch("https://foodchapchap-qq3a.onrender.com/me")
 		.then((response) => response.json())
 		.then((user) => setUserr(user));
 	}, []);
   
 	useEffect(() => {
-		fetch(`/restaurants`)
+		fetch(`https://foodchapchap-qq3a.onrender.com/restaurants`)
 		  .then((response) => response.json())
 		  .then((restaurants) => setRestaurants(restaurants));
 	}, []);

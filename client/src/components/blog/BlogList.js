@@ -11,7 +11,7 @@ function BlogList( {blogs}) {
 
 
   // useEffect(() => {
-  //   axios.get('http://127.0.0.1:3000/blogs')
+  //   axios.get('https://foodchapchap-qq3a.onrender.com/blogs')
   //     .then(response => {
   //       setBlogs(response.data);
   //       setIsLoading(false);

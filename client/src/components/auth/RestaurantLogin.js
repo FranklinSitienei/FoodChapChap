@@ -14,7 +14,7 @@ function RestaurantLogin() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetch("/restaurant/login", {
+    fetch("https://foodchapchap-qq3a.onrender.com/restaurant/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

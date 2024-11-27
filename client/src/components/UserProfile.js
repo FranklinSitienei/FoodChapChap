@@ -8,7 +8,7 @@ const UserProfile = () => {
 
   useEffect(() => {
     // Replace with your backend API URL
-    const apiUrl = '/me'; 
+    const apiUrl = 'https://foodchapchap-qq3a.onrender.com/me'; 
     axios
       .get(apiUrl)
       .then((response) => {

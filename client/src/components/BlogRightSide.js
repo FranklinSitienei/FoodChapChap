@@ -5,7 +5,7 @@ const BlogRightSide = () => {
     const [popularBlogs, setPopularBlogs] = useState([]);
 
     useEffect(() => {
-        fetch('/blogs')
+        fetch('https://foodchapchap-qq3a.onrender.com/blogs')
             .then(response => response.json())
             .then(blogs => {
                 // Sort blogs by likes in descending order

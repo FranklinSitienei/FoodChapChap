@@ -38,7 +38,7 @@ function RegisterRestaurant() {
     formData.append("permit_file", permitFile);
     formData.append("image", image);
   
-    fetch("/restaurant/signup", {
+    fetch("https://foodchapchap-qq3a.onrender.com/restaurant/signup", {
       method: "POST",
       body: formData,
     })

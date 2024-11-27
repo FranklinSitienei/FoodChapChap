@@ -30,7 +30,7 @@ const CreateBlogForm = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch('/blogs', {
+      const response = await fetch('https://foodchapchap-qq3a.onrender.com/blogs', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

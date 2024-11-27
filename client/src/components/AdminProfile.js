@@ -17,7 +17,7 @@ function AdminProfile() {
 
   useEffect(() => {
     // Fetch user information
-    fetch("/me")
+    fetch("https://foodchapchap-qq3a.onrender.com/me")
       .then((response) => response.json())
       .then((user) => {
         setUserr(user);
@@ -31,7 +31,7 @@ function AdminProfile() {
   useEffect(() => {
     // Fetch user's restaurant when userr changes
     if (userr) {
-      fetch(`/restaurants/${userr.id}`)
+      fetch(`https://foodchapchap-qq3a.onrender.com/restaurants/${userr.id}`)
         .then((response) => response.json())
         .then((rest) => setRestaurant(rest));
     }
@@ -49,7 +49,7 @@ function AdminProfile() {
     e.preventDefault();
 console.log('formdata submit', formData);
     // Send POST request
-    fetch('restaurant', {
+    fetch('https://foodchapchap-qq3a.onrender.com/restaurant', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

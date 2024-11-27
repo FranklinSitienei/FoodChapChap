@@ -10,7 +10,7 @@ function Restaurants() {
 
   const fetchRestaurants = async () => {
     try {
-      const response = await fetch("/restaurants");
+      const response = await fetch("https://foodchapchap-qq3a.onrender.com/restaurants");
       if (!response.ok) {
         throw new Error("Failed to fetch restaurants");
       }

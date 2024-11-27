@@ -179,6 +179,11 @@
   cursor: pointer;
 }
 
+.like-button:hover {
+  background: none;
+  border: none;
+}
+
 .follow-button {
   background: #007bff;
   color: white;

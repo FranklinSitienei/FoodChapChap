@@ -16,7 +16,7 @@ function Restaurantdash() {
 
       // Fetch orders if token is available
       if (token) {
-        fetch('/restaurants/orders', {
+        fetch('https://foodchapchap-qq3a.onrender.com/restaurants/orders', {
           headers: {
             Authorization: `Bearer ${token}`,
           },

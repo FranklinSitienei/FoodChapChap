@@ -23,7 +23,7 @@ import RiderDashboard from './components/rider/RiderDashboard.js';
 import RiderLogin from './components/rider/riderLogin.js';
 import RiderProfile from './components/rider/riderProfile.js';
 import RiderRegistration from './components/rider/riderRegistration.js';
-import BlogProfile from './components/blog/BlogProfile';
+import BlogProfile from './components/BlogProfile.js';
 import { useEffect, useState } from 'react';
 import Customer from './components/Customer';
  import LoyaltyPoints from './components/LoyaltyPoints';
@@ -44,7 +44,6 @@ import RestaurantPassword from './components/RestaurantPassword';
 import AdminProfile from './components/AdminProfile';
 import AdminSettlements from './components/AdminSettlements';
 import AdminPassword from './components/AdminPassword';
-import BlogPage from './components/blog/BlogPage';
 import CreateBlog from './components/blog/CreateBlog';
 import ContactMe from './components/ContactUs';
 import UserProfile from './components/UserProfile';
@@ -194,6 +193,7 @@ function App() {
 <Route path="/blogs/following" element={<BlogFollowingList  blogs={blogs}  />}/>
 <Route path="/blogs/:id" element={<BlogDetails blogs={blogs} />} />
 <Route path="/blogs/addblog" element={<BlogForm blogs={blogs} />} />
+<Route path="/blogs/profile" element={<BlogProfile blogs={blogs} />} />
 
 {/* riders  */}
 <Route path="/rider" element={<RiderRegistration />} />

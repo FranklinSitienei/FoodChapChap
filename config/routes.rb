@@ -67,6 +67,7 @@ Rails.application.routes.draw do
       post :follow
       delete :unfollow
       get :fetch_following_blogs
+      get :my_posts
     end
     collection do
       post :tag_user

@@ -1,0 +1,78 @@
+/* BlogProfile.css */
+.blog-profile-wrapper {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.profile-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.profile-info h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.profile-info p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.blogs-section {
+    width: 100%;
+}
+
+.blogs-section h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.blog-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.blog-item {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 8px;
+    width: 250px;
+    text-align: center;
+}
+
+.blog-item h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.blog-item button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.blog-item button:hover {
+    background-color: #0056b3;
+}

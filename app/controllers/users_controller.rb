@@ -79,6 +79,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def my_posts
+    user = current_user
+    posts = Blog.where(user_id: user.id)
+    render json: posts, status: :ok
+  end
+
   def fetch_following_blogs
     blogs = Blog.where(user_id: current_user.following_ids).includes(:user)
     render json: blogs, status: :ok

@@ -249,7 +249,7 @@ DEPENDENCIES
   bigdecimal
   byebug
   carrierwave (~> 2.0)
-  devise
+  devise (~> 4.9)
   faker
   foreman (~> 0.87)
   jwt

@@ -23,6 +23,9 @@ gem 'mini_magick'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
 
+gem 'mutex_m'
+gem 'bigdecimal'
+
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 

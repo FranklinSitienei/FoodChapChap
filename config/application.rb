@@ -20,6 +20,8 @@ module Phase4RailsPuttingItAllTogetherAuth
 
     config.webpacker.check_yarn_integrity = false
 
+    config.autoload_paths += Dir[Rails.root.join('app', 'mailers', '*')]
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 

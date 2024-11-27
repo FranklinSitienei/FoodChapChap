@@ -1,5 +1,3 @@
-module Devise
-    class Mailer < ::Devise::Mailer
-      # mailer code
-    end
-  end
+class Devise::Mailer < Devise.parent_mailer.constantize
+    default template_path: 'devise/mailer'
+end

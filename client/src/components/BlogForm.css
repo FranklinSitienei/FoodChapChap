@@ -1,42 +1,73 @@
-.create-post-form {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .create-post-form h2 {
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .create-post-form label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  .create-post-form input,
-  .create-post-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .create-post-form button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .create-post-form button:hover {
-    background-color: #0056b3;
-  }
-  
+/* Wrapper for the entire blog list page */
+.blog-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Banner section styling */
+.banner-section {
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.banner-content h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+}
+
+.blog-form-section {
+  flex: 1;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.blog-form-section h5 {
+  margin-bottom: 20px;
+}
+
+.blog-form-section input[type="text"],
+.blog-form-section textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.blog-form-section input[type="file"] {
+  margin-top: 10px;
+}
+
+.blog-form-section input[type="submit"] {
+  display: block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.blog-form-section input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.tag-container {
+  margin-top: 10px;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}

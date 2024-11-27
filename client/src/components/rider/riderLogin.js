@@ -65,7 +65,7 @@ const RiderLogin = () => {
       <div className="rider-wrapper">
         <div className="rider-content">
           <h1 className="rider-title">Ready To Hit The Road</h1>
-          <p className="body">Then Log In, We starting Exploring the World Together </p>
+          <p className="body">Log In, We start Exploring the World Together!</p>
         </div>
         <img src={riderImage} className="rider-image" alt="Rider" />
       </div>

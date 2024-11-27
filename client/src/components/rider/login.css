@@ -1,6 +1,6 @@
 .rider-container {
     width: 70%;
-    min-height: calc(100vh - 300px); 
+    min-height: calc(220vh - 500px); 
     display: flex;
     align-items: center;
     justify-content: center;

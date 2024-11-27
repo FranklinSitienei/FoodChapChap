@@ -20,6 +20,9 @@ gem 'jwt'
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
 
+gem 'bigdecimal'
+gem 'mutex_m'
+
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'

@@ -52,6 +52,7 @@ import BlogDetail from './components/blog/BlogDetail';
 import RegisterRestaurant from './components/auth/RegisterRestaurant';
 import RestaurantSignup from './components/auth/SignUp';
 import BlogList from './components/BlogList';
+import BlogFollowingList from './components/BlogFollowingList.js'
 import BlogDetails from './components/BlogDetails';
 import RiderDash from './components/RiderDash.js';
 import BlogForm from './components/BlogForm.js';
@@ -190,6 +191,7 @@ function App() {
 
 {/* blogs  */}
 <Route path="/blogs" element={<BlogList  blogs={blogs}  />}/>
+<Route path="/blogs/following" element={<BlogFollowingList  blogs={blogs}  />}/>
 <Route path="/blogs/:id" element={<BlogDetails blogs={blogs} />} />
 <Route path="/blogs/addblog" element={<BlogForm blogs={blogs} />} />
 

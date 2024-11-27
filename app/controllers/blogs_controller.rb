@@ -18,15 +18,6 @@ class BlogsController < ApplicationController
     }, methods: [:like_count, :comment_count, :following_creator_or_liker], status: :ok)
   end
 
-  # Custom method to return if the current user follows the creator or if the user liked the blog
-  def following_creator_or_liker
-    blog = Blog.find(params[:id])
-    creator_follows = current_user.following?(blog.user)
-    likers_follows = blog.likes.exists?(user: current_user)
-
-    { following_creator: creator_follows, liked_blog: likers_follows }
-  end
-
   def create
     blog = current_user.blogs.create(blog_params)
     if blog.save
@@ -55,13 +46,21 @@ class BlogsController < ApplicationController
     blog = Blog.find(params[:id])
     if blog.likes.exists?(user: current_user)
       blog.likes.find_by(user: current_user).destroy
-      blog.decrement!(:like_count)
-      render json: { message: "Blog unliked successfully" }, status: :ok
+      blog.decrement!(:like_count)  # Decrease like count when unliked
+      render json: { message: "Blog unliked successfully", like_count: blog.like_count }, status: :ok
     else
       blog.likes.create(user: current_user)
-      blog.increment!(:like_count)
-      render json: { message: "Blog liked successfully" }, status: :ok
+      blog.increment!(:like_count)  # Increase like count when liked
+      render json: { message: "Blog liked successfully", like_count: blog.like_count }, status: :ok
     end
+  end
+
+  def following_creator_or_liker
+    blog = Blog.find(params[:id])
+    creator_follows = current_user.following?(blog.user)
+    likers_follows = blog.likes.exists?(user: current_user)
+
+    render json: { following_creator: creator_follows, liked_blog: likers_follows }, status: :ok
   end
 
   def fetch_likes_from_followed

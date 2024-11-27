@@ -100,5 +100,5 @@ post "/login", to: 'sessions#user'
 post '/riders/login', to: 'riders#login'
 delete '/logout', to:'sessions#destroy'
 patch '/reset', to:'users#reset'
-get 'riders/riderorders', to: 'riders#orders_for_rider'
+get '/riders/riderorders', to: 'riders#orders_for_rider'
 end

@@ -200,6 +200,6 @@
 }
 
 .blog-right-sidebar {
-  flex: 1; /* Takes up 25% of the width */
+  flex: 2; /* Takes up 25% of the width */
   position: relative;
 }

@@ -157,3 +157,34 @@
   font-size: 14px;
   margin-top: 10px;
 }
+
+.heart-icon {
+  font-size: 20px;
+  color: gray;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.heart-icon.liked {
+  color: red;
+  transform: scale(1.2);
+}
+
+.like-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.follow-button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.follow-button.followed {
+  background: #28a745;
+}
